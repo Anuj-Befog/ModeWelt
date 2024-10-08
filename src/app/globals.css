@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Main brand or primary color */
+    --primary-color: #A45286;
+    /* Secondary color */
+    --secondary-color: #FFE3EF;
+    /* Background color */
+    --background-color: #F6F7F2;
+
+    /* Additional shades (optional) */
+
+    /* Lighter shade of primary */
+    --primary-color-light: #BF6D9D;
+    /* Darker shade of primary */
+    --primary-color-dark: #803B61;
+
+    /* Lighter shade of secondary */
+    --secondary-color-light: #FFD7EB;
+    /* Darker shade of secondary */
+    --secondary-color-dark: #F5BCD2;
+
+    /* Default text color */
+    --text-color: #333333;
+    /* Light text color */
+    --text-light-color: #666666;
+    /* Border color for elements */
+    --border-color: #E0E0E0;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Bungee';
+    src: url('/fonts/Bungee-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Login */
+.clip-login-triangle {
+    clip-path: polygon(39% 0, 100% 0, 100% 100%, 78% 100%);
+}
+
+/* Signup */
+.clip-signup-triangle {
+    clip-path: polygon(0 0%, 52% 0, 20% 100%, 0% 100%);
+}
+
+.nav-searchbar::placeholder{
+    margin-right: 7rem;
+}
