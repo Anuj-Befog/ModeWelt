@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     try {
         // extract data from token
         const userId = await getDataFromToken(request)
-        const user = User.findOne({_id: userId}).select("-password") // for removing the object use '-' symbol
+        const user = await User.findOne({_id: userId}).select("-password") // for removing the object use '-' symbol
 
         // Check if there is no user
         return NextResponse.json({

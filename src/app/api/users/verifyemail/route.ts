@@ -8,9 +8,12 @@ export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json()
         const { token } = reqBody
-        console.log(token)
+        console.log("Received token:", token);
 
-        const user = User.findOne({ verifyToken: token, verifyTokenExpiry: { $gt: Date.now() } })
+        const user = await User.findOne({
+            verifyToken: token,
+            verifyTokenExpiry: { $gt: Date.now() }
+        });
 
         if (!user) {
             return NextResponse.json({ error: "Invalid token" }, { status: 400 })
@@ -25,10 +28,11 @@ export async function POST(request: NextRequest) {
         await user.save()
 
         return NextResponse.json({
-            message: "Email verified "
-        }, { status: 500 })
-    }
-    catch (error) {
-        return NextResponse.json({ error: error.message }, { status: 500 })
+            message: "Email verified successfully"
+        }, { status: 200 });
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
