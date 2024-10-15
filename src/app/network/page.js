@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { FiUsers } from 'react-icons/fi';
+
 
 function Page() {
     // State to control which section is active
@@ -42,7 +44,7 @@ function Page() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8-1.95 0-3.72-.51-5.26-1.35L10.5 16.85l-2.74 2.74-1.35-1.35L15.26 12.01C16.79 11.5 21 7.582 21 12z"></path>
                         </svg>
                         <span className="ml-2 text-gray-800">Connections</span>
-                        <span className="ml-auto text-gray-600">2</span>
+                        <span className="ml-auto text-[#FBAE4A]" > <span className=" text-xl ">.</span> 1,242</span>
                     </div>
                     <ul className="space-y-0">
                         <li
@@ -106,21 +108,27 @@ function Page() {
                         <div className="Connections">
                             <div className=" ml-16 mb-24 space-y-8">
                                 {/* Connections Section */}
-                                <div className="text-center">
-                                    <p className="font-semibold items-start text-start text-2xl">Connections</p>
+                                <div className="text-center space-x-4 flex ">
+                                    <FiUsers className="text-[#A45286] w-6 h-6" />
+
+                                    <p className="font-semibold items-start text-start text-[#A45286] text-3xl">Connections</p>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     {/* Connection Card 1 */}
-                                    <div className="bg-white p-4 shadow w-[251px] h-[136px] rounded-lg">
+                                    <div className="bg-white p-1 shadow w-[251px] h-[136px] rounded-lg">
                                         {/* Today */}
-                                        <div className="mt-4">
-                                            <div className="flex justify-between items-center">
-                                                <p className="text-gray-700">Today</p>
+                                        <div className="mt-0">
+                                            <div className="flex px-2 justify-between items-center">
+                                                <p className="text-gray-700  font-semibold">Today</p>
                                                 <span className="text-blue-500">Icon</span>
                                             </div>
+                                            <div className="flex mt-1 px-2 space-x-3">
+                                                <p className="w[33px]  text-white h-[33px] bg-[#A45286] rounded-md">10+</p>
+                                                <p className="w-[60px] text-[#A45286] ">New Connection</p>
+                                            </div>
 
-                                            <hr className="my-4" />
-                                            <div className="flex justify-between">
+                                            <hr className="my-2" />
+                                            <div className="flex px-2 justify-between">
                                                 <p className="text-blue-500 cursor-pointer">See stats</p>
                                                 <p className="text-blue-500 cursor-pointer">See all</p>
                                             </div>
@@ -128,16 +136,20 @@ function Page() {
                                     </div>
 
                                     {/* Connection Card 2 */}
-                                    <div className="bg-white p-4 shadow w-[251px] h-[136px] rounded-lg">
+                                    <div className="bg-white p-1 shadow w-[251px] h-[136px] rounded-lg">
                                         {/* Today */}
-                                        <div className="mt-4">
-                                            <div className="flex justify-between items-center">
-                                                <p className="text-gray-700">Today</p>
+                                        <div className="mt-0">
+                                            <div className="flex px-2 justify-between items-center">
+                                                <p className="text-gray-700  font-semibold">Today</p>
                                                 <span className="text-blue-500">Icon</span>
                                             </div>
+                                            <div className="flex mt-1 px-2 space-x-3">
+                                                <p className="w[33px]  text-white h-[33px] bg-[#A45286] rounded-md">10+</p>
+                                                <p className="w-[60px] text-[#A45286] ">New Connection</p>
+                                            </div>
 
-                                            <hr className="my-4" />
-                                            <div className="flex justify-between">
+                                            <hr className="my-2" />
+                                            <div className="flex px-2 justify-between">
                                                 <p className="text-blue-500 cursor-pointer">See stats</p>
                                                 <p className="text-blue-500 cursor-pointer">See all</p>
                                             </div>
@@ -145,16 +157,20 @@ function Page() {
                                     </div>
 
                                     {/* Connection Card 3 */}
-                                    <div className="bg-white p-4 shadow w-[251px] h-[136px] rounded-lg">
+                                    <div className="bg-white p-1 shadow w-[251px] h-[136px] rounded-lg">
                                         {/* Today */}
-                                        <div className="mt-4">
-                                            <div className="flex justify-between items-center">
-                                                <p className="text-gray-700">Today</p>
+                                        <div className="mt-0">
+                                            <div className="flex px-2 justify-between items-center">
+                                                <p className="text-gray-700  font-semibold ">Today</p>
                                                 <span className="text-blue-500">Icon</span>
                                             </div>
+                                            <div className="flex mt-1 px-2 space-x-3">
+                                                <p className="w[33px]  text-white h-[33px] bg-[#A45286] rounded-md">10+</p>
+                                                <p className="w-[60px] text-[#A45286] ">New Connection</p>
+                                            </div>
 
-                                            <hr className="my-4" />
-                                            <div className="flex justify-between">
+                                            <hr className="my-2" />
+                                            <div className="flex px-2 justify-between">
                                                 <p className="text-blue-500 cursor-pointer">See stats</p>
                                                 <p className="text-blue-500 cursor-pointer">See all</p>
                                             </div>
@@ -195,7 +211,7 @@ function Page() {
 
                                         {/* Buttons Section */}
                                         <div className="flex space-x-2">
-                                            <button className="px-4 py-2 bg-green-500 text-white rounded-lg">Accept</button>
+                                            <button className="px-4 py-2 bg-[#A45286] text-white rounded-lg">Accept</button>
                                             <button className="px-4 py-2 bg-red-500 text-white rounded-lg">Decline</button>
                                         </div>
                                     </div>
@@ -217,7 +233,7 @@ function Page() {
 
                                         {/* Buttons Section */}
                                         <div className="flex space-x-2">
-                                            <button className="px-4 py-2 bg-green-500 text-white rounded-lg">Accept</button>
+                                            <button className="px-4 py-2 bg-[#A45286] text-white rounded-lg">Accept</button>
                                             <button className="px-4 py-2 bg-red-500 text-white rounded-lg">Decline</button>
                                         </div>
                                     </div>
@@ -231,7 +247,10 @@ function Page() {
 
                 {activeSection === 'invitations' && (
                     <div>
-                        <h2 className="text-2xl font-bold">Invitations</h2>
+                        <div className="space-x-4 flex items-center">
+                            <FiUsers className="text-[#A45286] w-6 h-6" />
+                            <h2 className="text-3xl font-bold text-[#A45286]">Invitations</h2>
+                        </div>
                         <div className="mt-8">
                             <div className="w-[480px] h-[50px] border-2 border-slate-400 rounded-md flex justify-between items-center bg-white">
                                 {/* Received Button */}
@@ -460,7 +479,10 @@ function Page() {
 
                 {activeSection === 'pages' && (
                     <div>
-                        <h2 className="text-2xl font-bold">Pages</h2>
+                        <div className="space-x-4 flex items-center">
+                            <FiUsers className="text-[#A45286] w-6 h-6" />
+                            <h2 className="text-3xl font-bold text-[#A45286]">Pages</h2>
+                        </div>
                         <div className="mb-16 mt-7 space-y-6 ">
                             <div className="flex items-center justify-between w-[823px] h-[95px] shadow-md px-4 space-x-6 bg-white">
                                 {/* Image and Text Section */}
@@ -573,7 +595,10 @@ function Page() {
 
                 {activeSection === 'groups' && (
                     <div>
-                        <h2 className="text-2xl font-bold">Groups</h2>
+                        <div className="space-x-4 flex items-center">
+                            <FiUsers className="text-[#A45286] w-6 h-6" />
+                            <h2 className="text-3xl font-bold text-[#A45286]">Groups</h2>
+                        </div>
                         <div className="mt-8">
                             <div className="w-[480px] h-[50px] border-2 border-slate-400 rounded-md flex justify-between items-center bg-white">
                                 {/* Your group Button */}
@@ -802,7 +827,10 @@ function Page() {
 
                 {activeSection === 'teammates' && (
                     <div>
-                        <h2 className="text-2xl font-bold">Teammates</h2>
+                        <div className="space-x-4 flex items-center">
+                            <FiUsers className="text-[#A45286] w-6 h-6" />
+                            <h2 className="text-3xl font-bold text-[#A45286]">Teammates</h2>
+                        </div>
 
                         <div className="mb-10 mt-6">
                             <div className="w-[847px] h-[440px] border-2 border-slate-400 flex justify-center items-center">
@@ -821,7 +849,10 @@ function Page() {
 
                 {activeSection === 'hashtags' && (
                     <div>
-                        <h2 className="text-2xl font-bold"> # Hashtags</h2>
+                        <div className="space-x-4 flex items-center">
+                            <FiUsers className="text-[#A45286] w-6 h-6" />
+                            <h2 className="text-3xl font-bold text-[#A45286]"> # Hashtags</h2>
+                        </div>
                         <div className="mb-10 mt-6">
                             <div className="w-[847px] h-[440px] border-2 border-slate-400 flex">
                                 <div className="p-3 space-x-4">
