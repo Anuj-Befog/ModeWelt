@@ -35,7 +35,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useLenis; // Use the custom Lenis hook here
+  useLenis(); // Use the custom Lenis hook here
 
   return (
     <html lang="en">
