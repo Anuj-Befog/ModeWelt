@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import '../css/Authentication.css';
+import Link from 'next/link';
 
 const Authentication = () => {
     const [active, setActive] = useState(false); // Manage form state
@@ -37,9 +38,13 @@ const Authentication = () => {
                             <a href="/signup">Create Account</a>
                         </div>
 
-                        <div className="mt-6">
-                            <button className="input-box animation w-full bg-primarybtn text-white py-2 px-4 rounded-full hover:bg-primary transition duration-300 btn" style={{ '--D': 5, '--S': 26 }} type="submit">Login</button>
-                        </div>
+                        <Link href="/demo">
+                            <div className="input-box animation" style={{ '--D': 5, '--S': 26 }}>
+                                <button type="submit" className="uppercase w-full bg-primarybtn hover:bg-primary text-white py-3 px-4 rounded-full transition duration-300">
+                                    LOGIN
+                                </button>
+                            </div>
+                        </Link>
 
                         {/* Registration link */}
                         <div className="regi-link animation mt-6 text-center text-sm text-gray-600 uppercase" style={{ '--D': 6, '--S': 27 }}>
@@ -89,11 +94,13 @@ const Authentication = () => {
                             <i class='bx bxs-lock'></i>
                         </div>
 
-                        <div className="input-box animation" style={{ '--li': 24, '--S': 7 }}>
-                            <button type="submit" className="uppercase w-full bg-primarybtn hover:bg-primary text-white py-3 px-4 rounded-full transition duration-300">
-                                SUBMIT
-                            </button>
-                        </div>
+                        <Link href="/demo">
+                            <div className="input-box animation" style={{ '--li': 24, '--S': 7 }}>
+                                <button type="submit" className="uppercase w-full bg-primarybtn hover:bg-primary text-white py-3 px-4 rounded-full transition duration-300">
+                                    SUBMIT
+                                </button>
+                            </div>
+                        </Link>
 
                         {/* Registration link */}
                         <div className="regi-link animation mt-6 text-center text-sm text-gray-600 uppercase" style={{ '--li': 25, '--S': 8 }}>
