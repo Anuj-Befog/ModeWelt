@@ -1,14 +1,14 @@
 "use client"
 
 import React, { useState } from 'react';
-import '../css/Authentication.css';
+import '../css/Auth.css';
 import Link from 'next/link';
 
-const Authentication = () => {
+const Auth = () => {
     const [active, setActive] = useState(false); // Manage form state
 
     return (
-        <div className="flex justify-center items-center h-screen relative">
+        <div className="flex justify-center items-center min-h-[90vh] relative">
             <div className={`auth-container relative z-10 h-[524px] w-[957px] border-primary border-2 flex bg-background shadow-lg rounded-2xl max-w-4xl ${active ? 'active' : ''}`}>
                 <div className="curved-shape1"></div>
                 <div className="curved-shape2"></div>
@@ -38,7 +38,7 @@ const Authentication = () => {
                             <a href="/signup">Create Account</a>
                         </div>
 
-                        <Link href="/demo">
+                        <Link href="/welcome">
                             <div className="input-box animation" style={{ '--D': 5, '--S': 26 }}>
                                 <button type="submit" className="uppercase w-full bg-primarybtn hover:bg-primary text-white py-3 px-4 rounded-full transition duration-300">
                                     LOGIN
@@ -94,7 +94,7 @@ const Authentication = () => {
                             <i class='bx bxs-lock'></i>
                         </div>
 
-                        <Link href="/demo">
+                        <Link href="/welcome">
                             <div className="input-box animation" style={{ '--li': 24, '--S': 7 }}>
                                 <button type="submit" className="uppercase w-full bg-primarybtn hover:bg-primary text-white py-3 px-4 rounded-full transition duration-300">
                                     SUBMIT
@@ -118,4 +118,4 @@ const Authentication = () => {
     );
 };
 
-export default Authentication;
+export default Auth;
