@@ -1,6 +1,13 @@
+'use client'
 import React from 'react';
-
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link'
+import Profile from '../components/Profile/index'
 function Page() {
+    const [activeSection, setActiveSection] = useState('profile');
+    const [activeSectionPost, setActiveSectionPost] = useState('post');
+
     return (
         <div className="h-auto w-full p-4">
             {/* Main content area */}
@@ -30,11 +37,11 @@ function Page() {
 
                                 {/* Buttons */}
                                 <div className="mt-4 space-x-4">
-                                    <button className="w-[170px] h-[32px] bg-gradient-to-b from-[#FFA1AF] to-[#A45286] text-white rounded-[4px]">
+                                    <button className="w-[170px] h-[32px] bg-gradient-to-b from-[#FFA1AF] to-[#A45286] rounded-md hover:bg-[#A45286]  text-white rounded-[4px]">
                                         Contact Info
                                     </button>
 
-                                    <button className="w-[170px] h-[32px] bg-[#FFFF] text-[#A45286] rounded-[4px] absolute border-[2px] border-[#A45286]">
+                                    <button className="w-[170px] h-[32px] bg-[#FFFF] text-[#A45286] rounded-md hover:bg-[#A45286]  rounded-[4px] absolute border-[2px] border-[#A45286] rounded-md hover:bg-[#A45286] ">
                                         1,043 connections
                                     </button>
 
@@ -43,41 +50,167 @@ function Page() {
                         </div>
                     </div>
 
-
-                    {/* Other sections */}
                     <div className="mt-12 w-[850px] h-[64px] shadow-lg grid grid-cols-3 items-center border-b">
-                        <button className="w-full h-full text-white font-gotham font-semibold bg-[#A45286] border-r last:border-r-0">
+                        <button
+                            onClick={() => setActiveSection('profile')}
+                            className={`w-full h-full text-white font-gotham font-semibold bg-[#A45286] rounded-md hover:bg-[#A45286] border-r last:border-r-0 ${activeSection === 'profile' ? 'bg-[#A45286]' : 'bg-gray-200'
+                                }`}
+                        >
                             Profile
                         </button>
-                        <button className="w-full font-gotham font-bold h-full border-r last:border-r-0">
+
+                        <button
+                            onClick={() => setActiveSection('activities')}
+                            className={`w-full font-gotham font-bold h-full border-r last:border-r-0 ${activeSection === 'activities' ? 'bg-[#A45286] text-white' : 'bg-gray-200'
+                                }`}
+                        >
                             Activity & Interests
                         </button>
-                        <button className="w-full font-gotham font-bold h-full">
+
+                        <button
+                            onClick={() => setActiveSection('articles')}
+                            className={`w-full font-gotham font-bold h-full ${activeSection === 'articles' ? 'bg-[#A45286] text-white' : 'bg-gray-200'
+                                }`}
+                        >
                             Articles (3)
                         </button>
                     </div>
 
-
-
-
-                    <div className="mt-12 w-[850px] h-[170px] shadow-lg">
-                        <div className="p-6 h-full flex flex-col ">
-                            {/* Title Section */}
-                            <h1 className="font-bold mb-3 w-[58px] font-gotham h-[18px]">About</h1>
-                            {/* Paragraph Section */}
-                            <p className="text-sm">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur nobis quo veritatis ullam doloribus,
-                                earum cupiditate minima provident officia ex eveniet debitis aliquam mollitia fuga praesentium veniam.
-                                Iste, illo delectus officia ex eveniet debitis aliquam mollitia fuga praesentium veniam.
-                                Iste, illo delectus  fuga praesentium veniam.
-                                Iste, illo delectus  fuga praesentium veniam.
-                                Iste, illo delectus.
-                            </p>
-
-                            {/* See More Section */}
-                            <span className="text-blue-500 cursor-pointer">See more</span>
+                    {/* Profile Section */}
+                    {activeSection === 'profile' && (
+                        <div>
+                            <Profile />
                         </div>
-                    </div>
+                    )}
+
+                    {/* Activities and Interests Section */}
+                    {activeSection === 'activities' && (
+                        <div>
+                            <div className="w-[850px] h-[395px] mt-8 border-2 border-slate-500">
+                                <div>
+                                    <h1 className="text-[18px] font-semibold py-3 px-4">Recent Activities</h1>
+                                </div>
+
+                                {/* Buttons for switching sub-sections */}
+                                <div className="px-4 space-x-7">
+                                    <button
+                                        onClick={() => setActiveSectionPost('post')}
+                                        className={`border-2 border-[#A45286] rounded-md px-6 text-lg ${activeSectionPost === 'post' ? 'bg-[#A45286] text-white' : ''
+                                            }`}
+                                    >
+                                        Post
+                                    </button>
+                                    <button
+                                        onClick={() => setActiveSectionPost('comment')}
+                                        className={`border-2 border-[#A45286] rounded-md px-6 text-lg ${activeSectionPost === 'comment' ? 'bg-[#A45286] text-white' : ''
+                                            }`}
+                                    >
+                                        Comment
+                                    </button>
+                                    <button
+                                        onClick={() => setActiveSectionPost('videos')}
+                                        className={`border-2 border-[#A45286] rounded-md px-6 text-lg ${activeSectionPost === 'videos' ? 'bg-[#A45286] text-white' : ''
+                                            }`}
+                                    >
+                                        Videos
+                                    </button>
+                                    <button
+                                        onClick={() => setActiveSectionPost('images')}
+                                        className={`border-2 border-[#A45286] rounded-md px-6 text-lg ${activeSectionPost === 'images' ? 'bg-[#A45286] text-white' : ''
+                                            }`}
+                                    >
+                                        Images
+                                    </button>
+                                    <button
+                                        onClick={() => setActiveSectionPost('documents')}
+                                        className={`border-2 border-[#A45286] rounded-md px-6 text-lg ${activeSectionPost === 'documents' ? 'bg-[#A45286] text-white' : ''
+                                            }`}
+                                    >
+                                        Documents
+                                    </button>
+                                </div>
+
+                                {/* Dynamic content based on active post section */}
+                                <div className="p-4">
+                                    {activeSectionPost === 'post' && (
+                                       <div className="p-2 bg-white shadow-lg rounded-lg">
+                                       <h3 className="text-lg font-semibold mb-2 text-gray-800">
+                                         Aditya Kumar Kanaujiya posted this <span className="text-sm text-gray-500">1 week ago</span>
+                                       </h3>
+                                       <div className="flex space-x-4">
+                                         <Image
+                                           className="w-[99px] h-[63px] object-cover rounded-lg"
+                                           src=""
+                                           alt="image"
+                                         />
+                                         <div>
+                                           <p className="text-gray-600 mb-3">
+                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam in, iure temporibus impedit delectus sed repellendus...
+                                           </p>
+                                           <div className="flex items-center space-x-2 text-blue-600">
+                                             <span className="text-sm">🔗</span>
+                                             <span className="text-sm cursor-pointer hover:underline">See more</span>
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+                                     
+                                    )}
+
+                                    {activeSectionPost === 'comment' && (
+                                        <div>
+                                            <h3>
+                                                Aditya Kumar commented on a post <span>2 days ago</span>
+                                            </h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate officiis velit...</p>
+                                        </div>
+                                    )}
+
+                                    {activeSectionPost === 'videos' && (
+                                        <div>
+                                            <h3>
+                                                Aditya Kumar posted a video <span>3 days ago</span>
+                                            </h3>
+                                            <p>Check out this video about technology and innovation...</p>
+                                        </div>
+                                    )}
+
+                                    {activeSectionPost === 'images' && (
+                                        <div>
+                                            <h3>
+                                                Aditya Kumar shared an image <span>5 days ago</span>
+                                            </h3>
+                                            <Image className="w-[200px] h-[150px]" src="" alt="shared image" />
+                                        </div>
+                                    )}
+
+                                    {activeSectionPost === 'documents' && (
+                                        <div>
+                                            <h3>
+                                                Aditya Kumar uploaded a document <span>1 week ago</span>
+                                            </h3>
+                                            <p>
+                                                Download the document: <a href="" className="text-blue-500">Document.pdf</a>
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="px-4">
+                                    <button className="text-[#A45286]">See all</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Articles Section */}
+                    {activeSection === 'articles' && (
+                        <div>
+                            <h2>Articles</h2>
+                            {/* Articles content goes here */}
+                        </div>
+                    )}
+
 
 
                     <div className="mt-12  h-[355px] w-[850px] shadow-lg p-6">
@@ -131,7 +264,7 @@ function Page() {
 
                         {/* See More Section */}
                         <div className="text-left pl-4">
-                            <span className='text-[#A45286] text-[12px] '>SEE ALL <span className='text-[#A45286] text-[12px] '>(20)</span></span>
+                            <span className='text-[#A45286] rounded-md hover:bg-[#A45286]  text-[12px] '>SEE ALL <span className='text-[#A45286] rounded-md hover:bg-[#A45286]  text-[12px] '>(20)</span></span>
                         </div>
                     </div>
 
@@ -276,21 +409,21 @@ function Page() {
                         <div className="h-[360px] shadow-lg">
                             <div className="space-x-8 w-[230px] mx-auto">
                                 <span className="font-semibold">Your Dashboard</span>
-                                <span className=" text-right text-[#A45286] font-semibold ">Go To stats</span>
+                                <span className=" text-right text-[#A45286] rounded-md hover:bg-[#A45286]  font-semibold ">Go To stats</span>
                             </div>
                             <hr className="w-[230px] mx-auto mt-4" />
                             <div className="flex flex-col m-4 mt-4">
                                 <div className="flex flex-col w-[83px] h-[71px] mb-6">
-                                    <span className="text-[#A45286] font-arial font-bold text-[45px] leading-[51.75px] text-left">896</span>
+                                    <span className="text-[#A45286] rounded-md hover:bg-[#A45286]  font-arial font-bold text-[45px] leading-[51.75px] text-left">896</span>
                                     <span className="text-[16px] text-gray-700">views today</span>
                                 </div>
 
                                 <div className="flex flex-col w-[83px] h-[71px] mb-6">
-                                    <span className="text-[#A45286] font-arial font-bold text-[45px] leading-[51.75px] text-left">896</span>
+                                    <span className="text-[#A45286] rounded-md hover:bg-[#A45286]  font-arial font-bold text-[45px] leading-[51.75px] text-left">896</span>
                                     <span className="text-[16px] text-gray-700">views today</span>
                                 </div>
                                 <div className="flex flex-col w-[183px] h-[71px] mb-6">
-                                    <span className="text-[#A45286] font-arial font-bold text-[45px] leading-[51.75px] text-left">896</span>
+                                    <span className="text-[#A45286] rounded-md hover:bg-[#A45286]  font-arial font-bold text-[45px] leading-[51.75px] text-left">896</span>
                                     <span className="text-[16px] text-gray-700">search appereances</span>
                                 </div>
                             </div>
@@ -299,7 +432,7 @@ function Page() {
                         <div className="h-[427px] mt-5 shadow-lg ">
                             <div className="space-x-20 w-[230px] font-gotham mx-auto mt-2">
                                 <span className="font-semibold">VISITORS</span>
-                                <span className=" text-right text-[#A45286] font-semibold ">VIEW ALL</span>
+                                <span className=" text-right text-[#A45286] rounded-md hover:bg-[#A45286]  font-semibold ">VIEW ALL</span>
                             </div>
                             <hr className="w-[230px] mx-auto " />
                             <div className="flex flex-col items-start m-4 space-y-3"> {/* Added spacing between items */}

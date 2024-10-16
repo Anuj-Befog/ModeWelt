@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
 
-function index() {
-  return (
-    <div>
-        {/* search modal content */}
-        <div
+function SearchModal({ isSearchOpen, closeModal }) {
+    return (
+        <div>
+            {/* Search modal content */}
+            <div
                 id="popup-modal"
                 tabIndex="-1"
-                className={`${isSearchOpen ? 'flex' : 'hidden'} overflow-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+                className={`${isSearchOpen ? 'flex' : 'hidden'} fixed top-[80px] right-0 left-0 z-50 justify-center items-center h-full overflow-hidden`}
             >
-                <div className="relative w-full max-w-md max-h-full">
+                <div className="relative w-[370px] h-[800px] max-h-full">
                     <div className="relative bg-white rounded-lg shadow z-50">
                         {/* Close Button */}
                         <button
@@ -36,26 +37,27 @@ function index() {
                         </button>
 
                         {/* Modal Content */}
-                        <div className="flex flex-col items-center justify-start p-4 w-[370px] h-full text-center space-y-3">
+                        <div className="flex flex-col items-center justify-start p-4 h-full text-center space-y-3">
+                            <div className="h-[80px]">
                             <h2 className="text-xl font-semibold mb-4">Related Search</h2>
-
-                            <div className="w-full space-y-3 flex-1 p-2 overflow-hidden">
+                            </div>
+                            <div className="w-full h-[720px] space-y-3 flex-1 overflow-y-auto">
                                 {/* Jobs Section */}
                                 <div className="space-y-1">
                                     <p className="font-medium text-left p-2">Jobs</p>
                                     <div className="p-2 space-y-2">
                                         <div className="flex items-center w-full h-[78px] shadow-lg">
-                                            <Image src='' alt='img' />
+                                            <Image src="/path/to/job-image1.jpg" alt="Job Image 1" width={50} height={50} />
                                             <div className="ml-2">
-                                                <span className="font-semibold">Job Title</span>
-                                                <span className="text-gray-500">Company Name</span>
+                                                <span className="font-semibold">Job Title 1</span>
+                                                <span className="text-gray-500">Company Name 1</span>
                                             </div>
                                         </div>
                                         <div className="flex items-center w-full h-[78px] shadow-lg">
-                                            <Image src='' alt='img' />
+                                            <Image src="/path/to/job-image2.jpg" alt="Job Image 2" width={50} height={50} />
                                             <div className="ml-2">
-                                                <span className="font-semibold">Job Title</span>
-                                                <span className="text-gray-500">Company Name</span>
+                                                <span className="font-semibold">Job Title 2</span>
+                                                <span className="text-gray-500">Company Name 2</span>
                                             </div>
                                         </div>
                                     </div>
@@ -67,17 +69,17 @@ function index() {
                                     <p className="font-medium text-left p-2">Users</p>
                                     <div className="p-2 space-y-2">
                                         <div className="flex items-center w-full h-[78px] shadow-lg">
-                                            <Image src='' alt='img' />
+                                            <Image src="/path/to/user-image1.jpg" alt="User Image 1" width={50} height={50} />
                                             <div className="ml-2">
-                                                <span className="font-semibold">User Name</span>
-                                                <span className="text-gray-500">User Description</span>
+                                                <span className="font-semibold">User Name 1</span>
+                                                <span className="text-gray-500">User Description 1</span>
                                             </div>
                                         </div>
                                         <div className="flex items-center w-full h-[78px] shadow-lg">
-                                            <Image src='' alt='img' />
+                                            <Image src="/path/to/user-image2.jpg" alt="User Image 2" width={50} height={50} />
                                             <div className="ml-2">
-                                                <span className="font-semibold">User Name</span>
-                                                <span className="text-gray-500">User Description</span>
+                                                <span className="font-semibold">User Name 2</span>
+                                                <span className="text-gray-500">User Description 2</span>
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +90,7 @@ function index() {
                                 <div className="space-y-1">
                                     <p className="font-medium text-left">Articles</p>
                                     <div className="flex items-center">
-                                        <Image src='' alt='articles' />
+                                        <Image src="/path/to/article-image.jpg" alt="Article Image" width={50} height={50} />
                                         <div className="ml-2">
                                             <span className="font-semibold">Article Title</span>
                                             <span className="text-gray-500">Author Name</span>
@@ -103,8 +105,8 @@ function index() {
                     </div>
                 </div>
             </div>
-    </div>
-  )
+        </div>
+    );
 }
 
-export default index
+export default SearchModal;

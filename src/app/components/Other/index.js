@@ -1,16 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image'; // Don't forget to import Image from Next.js
 
-function index() {
+function OtherModal({ isModalOpen, closeModal }) {
     return (
         <div>
-            {/*Other Modal content */}
+            {/* Other Modal content */}
             <div
                 id="popup-modal"
                 tabIndex="-1"
-                className={`${isModalOpen ? 'flex' : 'hidden'} overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+                className={`${isModalOpen ? 'flex' : 'hidden'} overflow-y-hidden w-[399px] fixed top-[88px] right-9 z-50 max-w-md h-[420px] max-h-full`}
             >
                 <div className="relative w-full max-w-md max-h-full">
-                    <div className="relative bg-white rounded-lg shadow ">
+                    <div className="relative bg-white rounded-lg shadow">
                         {/* Close Button */}
                         <button
                             type="button"
@@ -36,7 +37,7 @@ function index() {
                         </button>
 
                         {/* Modal Content */}
-                        <div className="p-6 md:p-8 text-center space-y-6">
+                        <div className="p-4 md:p-6 text-center space-y-4"> {/* Adjusted padding and spacing */}
                             {/* Profile Section */}
                             <div className="flex items-center space-x-4">
                                 <Image
@@ -44,11 +45,11 @@ function index() {
                                     alt="Profile"
                                     width={40}
                                     height={40}
-                                    className="rounded-full"
+                                    className="rounded-full h-[71px] w-[71px]"
                                 />
                                 <div className="text-left">
-                                    <h1 className="text-xl font-semibold">Befog</h1>
-                                    <span>Illustration Designer</span>
+                                    <h1 className="text-[16px] font-semibold">Befog</h1>
+                                    <span className='text-[10px]'>Illustration Designer</span>
                                 </div>
                             </div>
 
@@ -56,7 +57,8 @@ function index() {
                             <button
                                 onClick={closeModal} // Close modal on button click
                                 type="button"
-                                className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5"
+                                style={{ background: 'linear-gradient(180deg, #D675B2 0%, #A45286 100%)' }}
+                                className="text-white w-[308px] h-[37px] font-medium rounded-lg text-sm inline-flex items-center justify-center px-5 py-2"
                             >
                                 View your profile
                             </button>
@@ -64,27 +66,28 @@ function index() {
                             {/* Settings and Management Section */}
                             <div className="space-y-4 text-left">
                                 <div className="space-y-2">
-                                    <p>Settings and Privacy</p>
-                                    <p>Help</p>
-                                    <p>Language</p>
+                                    <p className='text-[11px]'>Settings and Privacy</p>
+                                    <p className='text-[11px]'>Help</p>
+                                    <p className='text-[11px]'>Language</p>
                                 </div>
                                 <hr />
                                 <div className="space-y-2">
-                                    <h1 className="font-medium">Manage</h1>
+                                    <h1 className="font-medium text-[14px]">Manage</h1>
                                     <div className="space-y-1">
-                                        <p>Past Activities</p>
-                                        <p>Job and Account</p>
+                                        <p className='text-[11px]'>Past Activities</p>
+                                        <p className='text-[11px]'>Job and Account</p>
                                     </div>
                                 </div>
                                 <hr />
                             </div>
 
                             {/* Sign Out Button */}
-                            <div>
+                            <div className="flex justify-center mt-4"> {/* Centered with margin */}
                                 <button
                                     onClick={closeModal} // Close modal on button click
                                     type="button"
-                                    className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5"
+                                    style={{ background: 'linear-gradient(180deg, #D675B2 0%, #A45286 100%)' }}
+                                    className="text-white w-[111px] h-[32px] justify-center text-[12px] focus:ring-4 focus:outline-none font-medium rounded-lg inline-flex items-center px-5 py-2.5"
                                 >
                                     Sign Out
                                 </button>
@@ -94,7 +97,7 @@ function index() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default index
+export default OtherModal;
