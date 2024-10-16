@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Login = () => {
@@ -30,7 +30,7 @@ const Login = () => {
                     <motion.div
                         initial={{ x: '-100%', opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 1}}
+                        transition={{ duration: 0.5, delay: 1 }}
                         className="w-[60%] p-8 relative top-[10%] left-[5%]">
                         <div className="relative">
                             <h2 className="text-center text-[2.5rem] font-[800] text-primary mb-8">LOGIN</h2>
