@@ -12,20 +12,20 @@ const Jobs = () => {
             {/* Left Section */}
             <div className="flex flex-col w-[850px]"> {/* Set the width here */}
                 {/* New Jobs Section */}
-                <div className="bg-white border h-[135px] shadow-lg p-6 my-4">
+                <div className="bg-white border h-[135px] shadow-lg p-5 my-4">
                     <div className="flex items-center space-x-4">
-                        <p className="text-[15px] font-semibold font-gotham text-[#181818]">Your Dream Job is here</p>
+                        <p className="text-[12px] pl-3 font-semibold font-gotham text-[#181818]">Your dream job is here</p>
                     </div>
-                    <hr className=" w-[790px] mx-auto mt-2 bg-gray-300 mb-4" />
-                    <div className=" flex items-center justify-between text-gray-600">
+                    <hr className=" w-[790px] mx-auto mt-4 bg-gray-300 mb-4" />
+                    <div className=" flex items-center px-2 justify-between text-gray-600">
                         <input
                             type="text"
-                            placeholder="What's on your mind?"
-                            className="flex-grow mt-[-11px] p-1 rounded-md focus:outline-none"
+                            placeholder="Search jobs"
+                            className="flex-grow mt-[-11px] p-1 text-[18px] rounded-md focus:outline-none"
                         />
-                        <div className="flex space-x-4 mt-2">
-                            <CiVideoOn className="text-xl h-10" />
-                            <div className="flex items-center justify-center w-10 h-10 bg-[#E188C1] rounded-lg">
+                        <div className="flex space-x-4 mt-1">
+                            <GrAttachment className="text-xl w-[24px] h-[24px] " />
+                            <div className="flex items-center  justify-center w-[32px] h-[32px] bg-[#E188C1] rounded-lg">
                                 <BsFillSendFill className="text-white" />
                             </div>
                         </div>
