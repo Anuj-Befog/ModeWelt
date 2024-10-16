@@ -7,7 +7,7 @@ const Authentication = () => {
     const [active, setActive] = useState(false); // Manage form state
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-100 relative">
+        <div className="flex justify-center items-center h-screen relative">
             <div className={`auth-container relative z-10 h-[524px] w-[957px] border-primary border-2 flex bg-background shadow-lg rounded-2xl max-w-4xl ${active ? 'active' : ''}`}>
                 <div className="curved-shape1"></div>
                 <div className="curved-shape2"></div>

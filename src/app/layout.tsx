@@ -35,6 +35,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   useLenis; // Use the custom Lenis hook here
 
   return (
