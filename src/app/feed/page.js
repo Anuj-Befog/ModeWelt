@@ -35,11 +35,14 @@ const Post = () => {
         </div>
 
         {/* Sort By Section */}
-        <div className="flex justify-center items-center my-4">
-          <p>
+        <div className="flex justify-center items-center my-4 space-x-4">
+          <hr className="flex-grow border-gray-300" />
+          <p className="text-center">
             SORT BY <span className="font-semibold text-[#A45286]">Trending</span>
           </p>
+          <hr className="flex-grow border-gray-300" />
         </div>
+
 
         {/* Post Section */}
         {[1, 2].map((_, index) => (
@@ -181,9 +184,9 @@ const Post = () => {
               <span>SHARE</span>
             </div>
           </div>
-        </div> 
+        </div>
 
-        
+
       </div>
 
       {/* Right Section */}
@@ -235,8 +238,8 @@ const Post = () => {
               />
               <div className=" ">
 
-              <p className="font-medium  ">Fashion Designing </p>
-              <p>University, Lucknow</p>
+                <p className="font-medium  ">Fashion Designing </p>
+                <p>University, Lucknow</p>
               </div>
             </div>
           ))}
@@ -249,32 +252,32 @@ const Post = () => {
           <div className="flex flex-wrap items-center w-[259px] mt-4 space-x-3">
             <p className="bg-[#FFE3EF] font-semibold rounded-md">#Fashion</p>
             <p className="bg-[#FFE3EF] font-semibold rounded-lg ">#Fashion</p>
-          
+
           </div>
         </div>
 
-         {/* Trending Articles Section */}
-         <div className="bg-white h-[300px] p-4 shadow-lg">
+        {/* Trending Articles Section */}
+        <div className="bg-white h-[300px] p-4 shadow-lg">
           <p className="font-bold">Trending Articles</p>
           <hr className="border-t border-gray-300 mt-2" />
           <div className="w-[227px] h-[198px] mt-2 flex-wrap ">
 
-          {[1, 2, 3].map((_, index) => (
-            <div key={index} className="flex items-center space-y-10 space-x-3">
-              <img
-                src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
-                alt="Trending Article"
-                className="w-[80px] h-[52px]"
-              />
-              <div className=" flex  flex-col ">
-              <p className="text-semibold text-[14px] ">Fashion Designing</p>
-              <span className='text-[10px]'>jhbgvfc</span>
-              </div>
+            {[1, 2, 3].map((_, index) => (
+              <div key={index} className="flex items-center space-y-10 space-x-3">
+                <img
+                  src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+                  alt="Trending Article"
+                  className="w-[80px] h-[52px]"
+                />
+                <div className=" flex  flex-col ">
+                  <p className="text-semibold text-[14px] ">Fashion Designing</p>
+                  <span className='text-[10px]'>jhbgvfc</span>
+                </div>
 
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );
