@@ -18,7 +18,7 @@ const Auth = () => {
                     <div className="relative">
                         <h2 className="animation text-center text-[2.5rem] font-[800] text-primary mb-8 uppercase" style={{ '--D': 0, '--S': 21 }}>Login</h2>
                         {/* Login heading underline */}
-                        <div class="animation h-[0.4rem] w-[6rem] top-[3.7rem] md:top-[3.5rem] rounded-[10px] left-[6.15rem] md:left-[8.3rem] bg-primary absolute" style={{ '--D': 1, '--S': 22 }}></div>
+                        <div className="animation h-[0.4rem] w-[6rem] top-[3.7rem] md:top-[3.5rem] rounded-[10px] left-[6.15rem] md:left-[8.3rem] bg-primary absolute" style={{ '--D': 1, '--S': 22 }}></div>
                     </div>
                     <form action="#">
                         <div className="input-box animation" style={{ '--D': 2, '--S': 23 }}>
@@ -65,13 +65,13 @@ const Auth = () => {
                     <div className='relative'>
                         <h2 className="animation text-center text-[2.5rem] font-[800] text-primary uppercase" style={{ '--li': 17, '--S': 0 }}>Sign Up</h2>
                         {/* Signup heading underline */}
-                        <div class="animation h-[0.4rem] w-[6rem] top-[3.5rem] rounded-[10px] left-[7.25rem] bg-primary absolute" style={{ '--li': 18, '--S': 1 }}></div>
+                        <div className="animation h-[0.4rem] w-[6rem] top-[3.5rem] rounded-[10px] left-[7.25rem] bg-primary absolute" style={{ '--li': 18, '--S': 1 }}></div>
                     </div>
                     <form action="#">
                         <div className="input-box animation" style={{ '--li': 19, '--S': 2 }}>
                             <input id="register_username" type="text" required />
                             <label htmlFor="register_username">Full Name</label>
-                            <i class='bx bxs-user-rectangle' ></i>
+                            <i className='bx bxs-user-rectangle' ></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 20, '--S': 3 }}>
                             <input id="register_email" type="email" required />
@@ -81,7 +81,7 @@ const Auth = () => {
                         <div className="input-box animation" style={{ '--li': 21, '--S': 4 }}>
                             <input id="register_phone" type="text" required />
                             <label htmlFor="register_phone">Phone</label>
-                            <i class='bx bxs-phone' ></i>
+                            <i className='bx bxs-phone' ></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 22, '--S': 5 }}>
                             <input id="register_password" type="password" required />
@@ -91,7 +91,7 @@ const Auth = () => {
                         <div className="input-box animation" style={{ '--li': 23, '--S': 6 }}>
                             <input id="register_confirm_password" type="password" required />
                             <label htmlFor="register_confirm_password">Confirm Password</label>
-                            <i class='bx bxs-lock'></i>
+                            <i className='bx bxs-lock'></i>
                         </div>
 
                         <Link href="/welcome">

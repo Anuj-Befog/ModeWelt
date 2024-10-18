@@ -6,6 +6,9 @@ import dynamic from "next/dynamic"; // Import dynamic from Next.js
 import useLenis from './components/Hooks/index'; // Adjust path as needed
 import { Suspense } from "react"; // Import Suspense for lazy loading
 import NProgressLoader from './components/NProgressLoader'; // Import the NProgressLoader
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -54,6 +57,7 @@ export default function RootLayout({
         <Suspense fallback={<div>Loading...</div>}> {/* Fallback UI while loading */}
           <Navbar />
         </Suspense>
+        <ToastContainer />
         <main className="px-4 sm:px-6 h-auto lg:px-8">
           {children}
         </main>
