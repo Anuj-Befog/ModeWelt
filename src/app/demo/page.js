@@ -13,8 +13,8 @@ export default function Profile() {
     const getUserDetails = async () => {
         try {
             const res = await axios.post('/api/users/me');
-            console.log(res.data._id);
-            setData(res.data._id);
+            console.log(res.data.data._id);
+            setData(res.data.data._id);
         }
         catch (error) {
             console.log(error.message);
@@ -24,7 +24,7 @@ export default function Profile() {
 
     const logout = async () => {
         try {
-            await axios.get('/api/auth/logout');
+            await axios.get('/api/users/logout');
             toast.success('Logout successfully');
             router.push('/login');
         } catch (error) {
@@ -38,12 +38,12 @@ export default function Profile() {
             <div className='flex flex-col items-center justify-center min-h-screen py-2'>
                 <h1>Profile Page</h1>
                 <hr />
-                <h2>{data === "nothing" ? "Nothing" : <Link href={`/profile/${data}`}></Link>}</h2>
+                <h2>{data === "nothing" ? "Nothing" : <Link href={`/demo/${data}`}>{data}</Link>}</h2>
                 <hr />
 
-                <button className='bg-blue-500 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg' onClick={logout}>Logout</button>
+                <button className='bg-red-500 mt-4 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg' onClick={logout}>Logout</button>
 
-                <button className='bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg' onClick={getUserDetails}>
+                <button className='bg-blue-500 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg' onClick={getUserDetails}>
                     Get User Details
                 </button>
             </div>
