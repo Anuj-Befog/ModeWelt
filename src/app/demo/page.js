@@ -26,6 +26,7 @@ const Auth = () => {
         e.preventDefault(); // Prevent page reload
         setLoginLoading(true);
         setButtonDisabledLogin(true);
+
         try {
             const res = await axios.post('/api/users/login', loginuser);
             console.log("Login Success", res.data);
@@ -34,7 +35,7 @@ const Auth = () => {
             toast.success("Login Successfully");
         } catch (error) {
             console.log("Login Failed", error.message);
-            toast.error(error.message);
+            toast.error("Login Failed");
             setLoginLoading(false);
             setButtonDisabledLogin(false);
         }
@@ -121,7 +122,7 @@ const Auth = () => {
                     </div>
                     <form>
                         <div className="input-box animation" style={{ '--D': 2, '--S': 23 }}>
-                            <input id="login_email" type="text" value={loginuser.email} onChange={(e) => setLoginUser({ ...loginuser, email: e.target.value })} required />
+                            <input id="login_email" type="email" value={loginuser.email} onChange={(e) => setLoginUser({ ...loginuser, email: e.target.value })} required />
                             <label htmlFor="login_username">Email</label>
                             <i className='bx bxs-user'></i>
                         </div>
@@ -134,7 +135,7 @@ const Auth = () => {
                         {/* Links and buttons */}
                         <div className="animation flex justify-between text-sm mt-2 text-blue-500 uppercase" style={{ '--D': 4, '--S': 25 }}>
                             <a href="#">Forgot Password</a>
-                            <a href="/signup">Create Account</a>
+                            <a href="#" className='SignUpLink' onClick={() => setActive(true)}>Create Account</a>
                         </div>
 
                         <div className="input-box animation" style={{ '--D': 5, '--S': 26 }}>
@@ -144,7 +145,7 @@ const Auth = () => {
                                 disabled={buttonDisabledLogin || loginLoading}
                                 className={`uppercase w-full ${buttonDisabledSignup ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
                             >
-                                {signupLoading ? 'Login..' : 'LOGIN'}
+                                {signupLoading ? 'LOGIN...' : 'LOGIN'}
                             </button>
                         </div>
 
@@ -203,7 +204,7 @@ const Auth = () => {
                                 disabled={buttonDisabledSignup || signupLoading}
                                 className={`uppercase w-full ${buttonDisabledSignup ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
                             >
-                                {signupLoading ? 'Signing up...' : 'SUBMIT'}
+                                {signupLoading ? 'SUBMITTING...' : 'SUBMIT'}
                             </button>
                         </div>
 
