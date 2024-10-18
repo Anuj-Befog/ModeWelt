@@ -53,9 +53,9 @@ const Auth = () => {
     // Signup -->
 
     const [signupuser, setSignupUser] = useState({
-        email: '',
-        password: '',
         username: '',
+        email: '',
+        phone: '',
         password: '',
         confirmpassword: ''
     })
@@ -73,16 +73,23 @@ const Auth = () => {
             toast.error("Passwords do not match");
             setSignupLoading(false);
             setButtonDisabledSignup(false);
-            return ;
+            return;
         }
 
+        console.log("signupuser", signupuser)
+
         try {
+            console.log("signupuser", signupuser)
             const res = await axios.post('/api/users/signup', signupuser);
             console.log("Signup Success", res.data);
             setSignupLoading(false);
             router.push('/auth');
             toast.success("Signup Successfully");
-            toast.info("Please Check you mail for verification");
+
+            // Send verification mail alert
+            setTimeout(() => {
+                toast.info("Please Check you mail for verification")
+            }, 5000);
         } catch (error) {
             console.log("Signup Failed", error.message);
             toast.error(error.message);
@@ -91,9 +98,8 @@ const Auth = () => {
         }
     };
 
-
     useEffect(() => {
-        if (signupuser.email.length > 0 && signupuser.password.length > 0 && signupuser.username.length > 0) {
+        if (signupuser.username.length > 0 && signupuser.email.length > 0 && signupuser.phone.length > 0 && signupuser.password.length > 0 && signupuser.confirmpassword.length > 0) {
             setButtonDisabledSignup(false)
         } else {
             setButtonDisabledSignup(true)
@@ -165,17 +171,17 @@ const Auth = () => {
                     </div>
                     <form>
                         <div className="input-box animation" style={{ '--li': 19, '--S': 2 }}>
-                            <input id="register_username" type="text" value={signupuser.username} onChange={(e) => setSignupUser({ ...signupuser, username: e.target.value })} required />
+                            <input id="register_username" type="text" value={signupuser.username} onChange={(e) => setSignupUser({ ...signupuser, username: e.target.value })} autoComplete='true' required />
                             <label htmlFor="register_username">Username</label>
                             <i className='bx bxs-user-rectangle' ></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 20, '--S': 3 }}>
-                            <input id="register_email" type="email" value={signupuser.email} onChange={(e) => setSignupUser({ ...signupuser, email: e.target.value })} required />
+                            <input id="register_email" type="email" value={signupuser.email} onChange={(e) => setSignupUser({ ...signupuser, email: e.target.value })} autoComplete='true' required />
                             <label htmlFor="register_email">Email</label>
                             <i className='bx bxs-envelope'></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 21, '--S': 4 }}>
-                            <input id="register_phone" type="text" value={signupuser.phone} onChange={(e) => setSignupUser({ ...signupuser, phone: e.target.value })} required />
+                            <input id="register_phone" type="text" value={signupuser.phone} onChange={(e) => setSignupUser({ ...signupuser, phone: e.target.value })} autoComplete='true' required />
                             <label htmlFor="register_phone">Phone</label>
                             <i className='bx bxs-phone' ></i>
                         </div>

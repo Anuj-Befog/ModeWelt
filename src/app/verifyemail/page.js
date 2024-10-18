@@ -56,7 +56,7 @@ export default function TestVerifyEmail() {
                 {verified && (
                     <div>
                         <h2>Verified</h2>
-                        <Link href="/login">Login</Link>
+                        <Link href="/auth">Login</Link>
                     </div>
                 )}
 
