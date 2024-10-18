@@ -1,11 +1,111 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
 import '../css/Auth.css';
-import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 const Auth = () => {
-    const [active, setActive] = useState(false); // Manage form state
+    const [active, setActive] = useState(false);
+
+    const router = useRouter()
+
+    // Login -->
+
+    const [loginuser, setLoginUser] = useState({
+        email: '',
+        password: '',
+    })
+
+    const [buttonDisabledLogin, setButtonDisabledLogin] = useState(false)
+    const [loginLoading, setLoginLoading] = useState(false)
+
+
+    const onLogin = async (e) => {
+        e.preventDefault(); // Prevent page reload
+        setLoginLoading(true);
+        setButtonDisabledLogin(true);
+
+        try {
+            const res = await axios.post('/api/users/login', loginuser);
+            console.log("Login Success", res.data);
+            setLoginLoading(false);
+            router.push('/welcome');
+            toast.success("Login Successfully");
+        } catch (error) {
+            console.log("Login Failed", error.message);
+            toast.error("Login Failed");
+            setLoginLoading(false);
+            setButtonDisabledLogin(false);
+        }
+    };
+
+    useEffect(() => {
+        if (loginuser.email.length > 0 && loginuser.password.length > 0) {
+            setButtonDisabledLogin(false)
+        } else {
+            setButtonDisabledLogin(true)
+        }
+    }, [loginuser])
+
+    // ...................................................................................................................................................................................................
+
+    // Signup -->
+
+    const [signupuser, setSignupUser] = useState({
+        username: '',
+        email: '',
+        phone: '',
+        password: '',
+        confirmpassword: ''
+    })
+
+    const [buttonDisabledSignup, setButtonDisabledSignup] = useState(false)
+    const [signupLoading, setSignupLoading] = useState(false)
+
+    const onSignup = async (e) => {
+        e.preventDefault();
+        setSignupLoading(true);
+        setButtonDisabledSignup(true);
+
+        // Check if password and confirm password match
+        if (signupuser.password !== signupuser.confirmpassword) {
+            toast.error("Passwords do not match");
+            setSignupLoading(false);
+            setButtonDisabledSignup(false);
+            return;
+        }
+
+        console.log("signupuser", signupuser)
+
+        try {
+            console.log("signupuser", signupuser)
+            const res = await axios.post('/api/users/signup', signupuser);
+            console.log("Signup Success", res.data);
+            setSignupLoading(false);
+            router.push('/auth');
+            toast.success("Signup Successfully");
+
+            // Send verification mail alert
+            setTimeout(() => {
+                toast.info("Please Check you mail for verification")
+            }, 5000);
+        } catch (error) {
+            console.log("Signup Failed", error.message);
+            toast.error(error.message);
+            setSignupLoading(false);
+            setButtonDisabledSignup(false);
+        }
+    };
+
+    useEffect(() => {
+        if (signupuser.username.length > 0 && signupuser.email.length > 0 && signupuser.phone.length > 0 && signupuser.password.length > 0 && signupuser.confirmpassword.length > 0) {
+            setButtonDisabledSignup(false)
+        } else {
+            setButtonDisabledSignup(true)
+        }
+    }, [signupuser])
 
     return (
         <div className="flex justify-center items-center min-h-[90vh] relative">
@@ -20,14 +120,14 @@ const Auth = () => {
                         {/* Login heading underline */}
                         <div className="animation h-[0.4rem] w-[6rem] top-[3.7rem] md:top-[3.5rem] rounded-[10px] left-[6.15rem] md:left-[8.3rem] bg-primary absolute" style={{ '--D': 1, '--S': 22 }}></div>
                     </div>
-                    <form action="#">
+                    <form>
                         <div className="input-box animation" style={{ '--D': 2, '--S': 23 }}>
-                            <input id="login_username" type="text" required />
-                            <label htmlFor="login_username">Username</label>
+                            <input id="login_email" type="email" value={loginuser.email} onChange={(e) => setLoginUser({ ...loginuser, email: e.target.value })} required />
+                            <label htmlFor="login_username">Email</label>
                             <i className='bx bxs-user'></i>
                         </div>
                         <div className="input-box animation" style={{ '--D': 3, '--S': 24 }}>
-                            <input id="login_password" type="password" required />
+                            <input id="login_password" type="password" value={loginuser.password} onChange={(e) => setLoginUser({ ...loginuser, password: e.target.value })} autoComplete='true' required />
                             <label htmlFor="login_password">Password</label>
                             <i className='bx bxs-lock-alt'></i>
                         </div>
@@ -35,16 +135,19 @@ const Auth = () => {
                         {/* Links and buttons */}
                         <div className="animation flex justify-between text-sm mt-2 text-blue-500 uppercase" style={{ '--D': 4, '--S': 25 }}>
                             <a href="#">Forgot Password</a>
-                            <a href="/signup">Create Account</a>
+                            <a href="#" className='SignUpLink' onClick={() => setActive(true)}>Create Account</a>
                         </div>
 
-                        <Link href="/welcome">
-                            <div className="input-box animation" style={{ '--D': 5, '--S': 26 }}>
-                                <button type="submit" className="uppercase w-full bg-primarybtn hover:bg-primary text-white py-3 px-4 rounded-full transition duration-300">
-                                    LOGIN
-                                </button>
-                            </div>
-                        </Link>
+                        <div className="input-box animation" style={{ '--D': 5, '--S': 26 }}>
+                            <button
+                                onClick={onLogin}
+                                type="submit"
+                                disabled={buttonDisabledLogin || loginLoading}
+                                className={`uppercase w-full ${buttonDisabledSignup ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
+                            >
+                                {signupLoading ? 'LOGIN...' : 'LOGIN'}
+                            </button>
+                        </div>
 
                         {/* Registration link */}
                         <div className="regi-link animation mt-6 text-center text-sm text-gray-600 uppercase" style={{ '--D': 6, '--S': 27 }}>
@@ -67,40 +170,43 @@ const Auth = () => {
                         {/* Signup heading underline */}
                         <div className="animation h-[0.4rem] w-[6rem] top-[3.5rem] rounded-[10px] left-[7.25rem] bg-primary absolute" style={{ '--li': 18, '--S': 1 }}></div>
                     </div>
-                    <form action="#">
+                    <form>
                         <div className="input-box animation" style={{ '--li': 19, '--S': 2 }}>
-                            <input id="register_username" type="text" required />
-                            <label htmlFor="register_username">Full Name</label>
+                            <input id="register_username" type="text" value={signupuser.username} onChange={(e) => setSignupUser({ ...signupuser, username: e.target.value })} autoComplete='true' required />
+                            <label htmlFor="register_username">Username</label>
                             <i className='bx bxs-user-rectangle' ></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 20, '--S': 3 }}>
-                            <input id="register_email" type="email" required />
+                            <input id="register_email" type="email" value={signupuser.email} onChange={(e) => setSignupUser({ ...signupuser, email: e.target.value })} autoComplete='true' required />
                             <label htmlFor="register_email">Email</label>
                             <i className='bx bxs-envelope'></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 21, '--S': 4 }}>
-                            <input id="register_phone" type="text" required />
+                            <input id="register_phone" type="text" value={signupuser.phone} onChange={(e) => setSignupUser({ ...signupuser, phone: e.target.value })} autoComplete='true' required />
                             <label htmlFor="register_phone">Phone</label>
                             <i className='bx bxs-phone' ></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 22, '--S': 5 }}>
-                            <input id="register_password" type="password" required />
+                            <input id="register_password" type="password" value={signupuser.password} onChange={(e) => setSignupUser({ ...signupuser, password: e.target.value })} autoComplete='true' required />
                             <label htmlFor="register_password">Password</label>
                             <i className='bx bxs-lock-alt'></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 23, '--S': 6 }}>
-                            <input id="register_confirm_password" type="password" required />
+                            <input id="register_confirm_password" type="password" value={signupuser.confirmpassword} onChange={(e) => setSignupUser({ ...signupuser, confirmpassword: e.target.value })} autoComplete='true' required />
                             <label htmlFor="register_confirm_password">Confirm Password</label>
                             <i className='bx bxs-lock'></i>
                         </div>
 
-                        <Link href="/welcome">
-                            <div className="input-box animation" style={{ '--li': 24, '--S': 7 }}>
-                                <button type="submit" className="uppercase w-full bg-primarybtn hover:bg-primary text-white py-3 px-4 rounded-full transition duration-300">
-                                    SUBMIT
-                                </button>
-                            </div>
-                        </Link>
+                        <div className="input-box animation" style={{ '--li': 24, '--S': 7 }}>
+                            <button
+                                onClick={onSignup}
+                                type="submit"
+                                disabled={buttonDisabledSignup || signupLoading}
+                                className={`uppercase w-full ${buttonDisabledSignup ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
+                            >
+                                {signupLoading ? 'SUBMITTING...' : 'SUBMIT'}
+                            </button>
+                        </div>
 
                         {/* Registration link */}
                         <div className="regi-link animation mt-6 text-center text-sm text-gray-600 uppercase" style={{ '--li': 25, '--S': 8 }}>
