@@ -143,7 +143,7 @@ const Auth = () => {
                                 onClick={onLogin}
                                 type="submit"
                                 disabled={buttonDisabledLogin || loginLoading}
-                                className={`uppercase w-full ${buttonDisabledSignup ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
+                                className={`uppercase w-full ${buttonDisabledLogin ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
                             >
                                 {signupLoading ? 'LOGIN...' : 'LOGIN'}
                             </button>
