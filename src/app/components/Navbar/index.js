@@ -110,7 +110,9 @@ const Navbar = () => {
                 <div className="container mx-auto flex justify-between items-center ">
                     <div className="flex items-center  space-x-4">
                         <div className="relative w-[130px] ">
-                            <h1 className="text-xl font-[100] text-primary font-[Bungee] mr-[1.6rem]">MODEWELT</h1>
+                            <Link href='/'>
+                                <h1 className="uppercase text-[1.08rem] font-[100] text-primary font-[Bungee] mr-[1.6rem]">Fashionista</h1>
+                            </Link>
                             <div className="absolute border-r-2 h-[89px] border-[#DDDDDD] top-[-2.2rem] left-[8rem]"></div>
                         </div>
                         <ul className="hidden w-[519px] ml-1 md:flex space-x-6 justify-around mt-[-10px]">

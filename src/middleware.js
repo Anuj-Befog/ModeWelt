@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export function middleware(request) {
     const path = request.nextUrl.pathname
 
-    const isPublicPath = path === '/auth' || path === '/demo' || path === '/verify-email'
+    const isPublicPath = path === '/' || '/auth' || path === '/demo' || path === '/verify-email'
 
     const token = request.cookies.get('token')?.value || ''
 
@@ -12,7 +12,7 @@ export function middleware(request) {
         return NextResponse.redirect(new URL('/', request.url))
     }
     else if (!isPublicPath && !token) {
-        return NextResponse.redirect(new URL('/demo', request.url))
+        return NextResponse.redirect(new URL('/auth', request.url))
     }
 }
 
@@ -21,6 +21,5 @@ export const config = {
         '/',
         '/auth',
         '/verify-email',
-        '/demo',
     ]
 }

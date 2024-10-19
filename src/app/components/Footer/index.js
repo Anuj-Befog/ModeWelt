@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 // import { FaInstagram, FaLinkedin, FaSquareFacebook } from "react-icons/fa6";
@@ -37,7 +36,7 @@ const Footer = () => {
                     <div className="md:col-span-1 sm:col-span-2 block lg:mb-0 md:mb-5 mb-3">
                         <div className="logo-cont w-fit flex justify-center mt-16">
                             <Link href="/">
-                                <h1 className="text-xl font-[100] text-primary font-[Bungee]">MODEWELT</h1>
+                                <h1 className="uppercase text-xl font-[100] text-primary font-[Bungee]">Fashionista</h1>
                             </Link>
                         </div>
                     </div>

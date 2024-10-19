@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import '../css/Auth.css';
 import { toast } from 'react-toastify';
+import Link from 'next/link';
 
 const Auth = () => {
     const [active, setActive] = useState(false);
@@ -134,8 +135,8 @@ const Auth = () => {
 
                         {/* Links and buttons */}
                         <div className="animation flex justify-between text-sm mt-2 text-blue-500 uppercase" style={{ '--D': 4, '--S': 25 }}>
-                            <a href="#">Forgot Password</a>
-                            <a href="#" className='SignUpLink' onClick={() => setActive(true)}>Create Account</a>
+                            <Link href='/forgetpassword'>Forgot Password</Link>
+                            <p className='SignUpLink cursor-pointer' onClick={() => setActive(true)}>Create Account</p>
                         </div>
 
                         <div className="input-box animation" style={{ '--D': 5, '--S': 26 }}>

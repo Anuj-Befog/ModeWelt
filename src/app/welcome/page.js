@@ -127,8 +127,8 @@ export default function Welcome() {
 
             {/* Welcome heading and paragraph */}
             <div className="text-center mt-12 transition transition-300">
-                <h1 id="welcome-heading" className="text-3xl md:text-5xl font-bold text-primary hidden transition transition-300">
-                    WELCOME BACK! TO MODEWELT
+                <h1 id="welcome-heading" className="uppercase text-3xl md:text-5xl font-bold text-primary hidden transition transition-300">
+                    WELCOME BACK! TO Fashionista
                 </h1>
                 <p id="welcome-para" className="mt-4 uppercase text-sm w-[60%] mx-auto hidden transition transition-300">
                     Lorem Ipsum is simply dummy text of the printing and typesetting

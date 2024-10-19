@@ -1,7 +1,27 @@
 import React from 'react';
 import Image from 'next/image'; // Don't forget to import Image from Next.js
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 function OtherModal({ isModalOpen, closeModal }) {
+
+    const router = useRouter();
+
+    // Logout function
+    const logout = async () => {
+        try {
+            await axios.get('/api/users/logout');
+            router.push('/auth');
+            setTimeout(() => {
+                toast.success('Logout successfully');
+            }, 2000);
+        } catch (error) {
+            console.log(error.message);
+            toast.error(error.message);
+        }
+    }
+
     return (
         <div>
             {/* Other Modal content */}
@@ -84,7 +104,10 @@ function OtherModal({ isModalOpen, closeModal }) {
                             {/* Sign Out Button */}
                             <div className="flex justify-center mt-4"> {/* Centered with margin */}
                                 <button
-                                    onClick={closeModal} // Close modal on button click
+                                    onClick={() => {
+                                        closeModal(); // Close modal on button click
+                                        logout(); // Call logout function
+                                    }}
                                     type="button"
                                     style={{ background: 'linear-gradient(180deg, #D675B2 0%, #A45286 100%)' }}
                                     className="text-white w-[111px] h-[32px] justify-center text-[12px] focus:ring-4 focus:outline-none font-medium rounded-lg inline-flex items-center px-5 py-2.5"
