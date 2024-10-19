@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 export default function VerifyEmail() {
     const [token, setToken] = useState('');
