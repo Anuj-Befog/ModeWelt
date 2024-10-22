@@ -78,6 +78,7 @@ const Post = () => {
           {/* Border Top of Post */}
           <div className="w-[850px] h-[1px] bg-[#F4F4F4] mb-3"></div>
 
+          {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
               src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
@@ -122,14 +123,26 @@ const Post = () => {
             <div className="relative flex gap-[4rem]"> {/* Increased spacing */}
               {/* Likes */}
               <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
-                <FaThumbsUp className="text-primary text-[20px] w-[13.12px] h-[13.12px]" />
+                <Image
+                  height={100}
+                  width={100}
+                  alt='like'
+                  src='/assets/feedPage/like.png'
+                  className='w-[13.12px] h-[13.12px]'
+                />
                 <span className="text-[14px] font-semibold font-[Gotham]">28</span>
               </div>
               {/* Stats Border */}
               <div className="absolute w-[1px] left-[4.4rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
               {/* Comments */}
               <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
-                <FaComment className="text-primary text-[20px] w-[13.12px] h-[13.12px]" />
+                <Image
+                  height={100}
+                  width={100}
+                  alt='like'
+                  src='/assets/feedPage/comment.png'
+                  className='w-[13.12px] h-[13.12px]'
+                />
                 <span className="text-[14px] font-semibold font-[Gotham]">79</span>
               </div>
               {/* Stats Border */}
@@ -161,6 +174,7 @@ const Post = () => {
           {/* Border Top of Post */}
           <div className="w-[850px] h-[1px] bg-[#F4F4F4] mb-3"></div>
 
+          {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
               src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
@@ -216,14 +230,26 @@ const Post = () => {
             <div className="relative flex gap-[4rem]"> {/* Increased spacing */}
               {/* Likes */}
               <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
-                <FaThumbsUp className="text-primary text-[20px] w-[13.12px] h-[13.12px]" />
+                <Image
+                  height={100}
+                  width={100}
+                  alt='like'
+                  src='/assets/feedPage/like.png'
+                  className='w-[13.12px] h-[13.12px]'
+                />
                 <span className="text-[14px] font-semibold font-[Gotham]">28</span>
               </div>
               {/* Stats Border */}
               <div className="absolute w-[1px] left-[4.4rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
               {/* Comments */}
               <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
-                <FaComment className="text-primary text-[20px] w-[13.12px] h-[13.12px]" />
+                <Image
+                  height={100}
+                  width={100}
+                  alt='like'
+                  src='/assets/feedPage/comment.png'
+                  className='w-[13.12px] h-[13.12px]'
+                />
                 <span className="text-[14px] font-semibold font-[Gotham]">79</span>
               </div>
               {/* Stats Border */}
@@ -242,88 +268,130 @@ const Post = () => {
         {/* Post Text Section with Content */}
         <div className="bg-white h-[402px] my-4">
           <div className="flex justify-between items-center px-4 py-2">
-            <p className="leading-[15px] text-[10px]">
-              <span className="text-[#A45286]">Ted Bell, Annette Nguyen</span> and
-              <span className="text-[#A45286]"> Cody Hawkins</span> liked this
+            <p className="leading-[15px] text-[10px] font-[Gotham] text-[#181818]">
+              High rated post from your feed
             </p>
-            <FaEllipsisH className="text-[#181818] hover:text-primary w-[24px] h-[24px]" />
+            {/* Share Pointers */}
+            <FaEllipsisH className="text-[#181818] hover:text-primary w-[20px] h-[24px]" />
           </div>
-          <hr className=" w-[850px] bg-gray-300 mb-1" />
-          <div className="flex items-center mt-4 px-8 space-x-4">
+
+          {/* Border Top of Post */}
+          <div className="w-[850px] h-[1px] bg-[#F4F4F4] mb-3"></div>
+
+          {/* User Info */}
+          <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
-              src="/profile.png"
+              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
               alt="Profile"
-              width={40}
-              height={40}
-              className="rounded-full w-[52px] h-[52px] "
+              width={100}
+              height={100}
+              className="rounded-full w-[52px] h-[52px]"
+              onError={() => setSrc("/Images/Images1.png")}
             />
-            <div>
-              <h1 className="text-[14px] font-semibold">Adity Kumar</h1>
-              <span className='text-[10px]' >Illustration Designer</span>
+            <div className='flex flex-col'>
+              <h1 className="text-[14px] font-[Arial] font-[700]">Aditya Kumar</h1>
+              <span className="text-[10px] font-[Arial] font-[400]">Illustration Designer</span>
             </div>
           </div>
-          <div className=" text-gray-600 px-8">
-            <p className='text-[14px]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga placeat aperiam odio sapiente voluptates est...</p>
+
+          <div className=" text-gray-600 mt-4 px-8">
+            <p className='text-[14px] font-[400] leading-[21px] font-[Arial]'>There is some new guidelines for Fashion Designers</p>
             <div className="mt-3 space-y-4">
-              <div className="w-[790px] h-[80px] bg-[#FFE3EF] flex items-center p-4 rounded-lg">
-                {/* Image in Circle */}
+              <div className="w-[790px] h-[80px] bg-[#FFE3EF] flex items-center p-[1.3rem] rounded-lg">
+                {/* Documnet Image */}
                 <Image
                   width={100}
                   height={100}
-                  src="/path-to-image.jpg"
+                  src="/assets/feedPage/document.png"
                   alt="Circular"
-                  className="w-42 h-42 rounded-full object-cover"
+                  className="w-[42px] h-[42px] rounded-full object-cover position-center"
                 />
 
                 {/* Text */}
-                <div className=" space-y-3 px-4">
-                  <p className="ml-4 text-base font-semibold text-gray-700">Text Content Here</p>
-                  <span className=" pl-6">PDF file, 324 kb</span>
+                <div className=" space-y-3 px-[0.5rem]">
+                  <p className="ml-4 text-base text-[14px] font-[Arial] font-[400] text-[#181818]">Fashion guidelines for Illustration designers</p>
+                  <span className="pl-4 text-[#181818] text-[10px] leading-[15px] font-[Gotham]">PDF file, 324 kb</span>
                 </div>
 
                 {/* Icon in the Right */}
-                <div className="ml-auto">
-                  <LuDownloadCloud className='w-[22.2px] h-[15.1px] ' />
+                <div className="ml-auto  mr-[1rem]">
+                  <Image
+                    width={100}
+                    height={100}
+                    src='/assets/feedPage/download.png'
+                    className='w-[24px] h-[24px]'
+                    alt="download" />
                 </div>
               </div>
-              <div className="w-[790px] h-[80px] bg-[#FFE3EF] flex items-center p-4 rounded-lg">
-                {/* Image in Circle */}
+              <div className="w-[790px] h-[80px] bg-[#FFE3EF] flex items-center p-[1.3rem] rounded-lg">
+                {/* Documnet Image */}
                 <Image
                   width={100}
                   height={100}
-                  src="/path-to-image.jpg"
+                  src="/assets/feedPage/document.png"
                   alt="Circular"
-                  className="w-42 h-42 rounded-full object-cover"
+                  className="w-[42px] h-[42px] rounded-full object-cover position-center"
                 />
 
                 {/* Text */}
-                <div className=" space-y-3 px-4">
-                  <p className="ml-4 text-base font-semibold text-gray-700">Text Content Here</p>
-                  <span className=" pl-6">PDF file, 324 kb</span>
+                <div className=" space-y-3 px-[0.5rem]">
+                  <p className="ml-4 text-base text-[14px] font-[Arial] font-[400] text-[#181818]">fashion guidelines for Graphic Designer </p>
+                  <span className="pl-4 text-[#181818] text-[10px] leading-[15px] font-[Gotham]">PDF file, 245 kb</span>
                 </div>
 
                 {/* Icon in the Right */}
-                <div className="ml-auto">
-                  <LuDownloadCloud className='w-[22.2px] h-[15.1px] ' />
+                <div className="ml-auto  mr-[1rem]">
+                  <Image
+                    width={100}
+                    height={100}
+                    src='/assets/feedPage/download.png'
+                    className='w-[24px] h-[24px]'
+                    alt="download" />
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex justify-between items-center mt-5 px-8">
-            <div className="flex space-x-4">
-              <div className="flex items-center space-x-3">
-                <FaThumbsUp className="text-primary text-[20px]" />
-                <span>28</span>
+          {/* Border Bottom of Post */}
+          <div className="w-[850px] h-[1px] bg-[#F4F4F4] mt-4 mb-3"></div>
+
+          {/* Stats Post */}
+          <div className="flex justify-between items-center px-9 mb-4 mt-4">
+            {/* Stats */}
+            <div className="relative flex gap-[4rem]"> {/* Increased spacing */}
+              {/* Likes */}
+              <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
+                <Image
+                  height={100}
+                  width={100}
+                  alt='like'
+                  src='/assets/feedPage/like.png'
+                  className='w-[13.12px] h-[13.12px]'
+                />
+                <span className="text-[14px] font-semibold font-[Gotham]">28</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <FaComment className="text-primary text-[20px]" />
-                <span>79</span>
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[4.4rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+              {/* Comments */}
+              <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
+                <Image
+                  height={100}
+                  width={100}
+                  alt='like'
+                  src='/assets/feedPage/comment.png'
+                  className='w-[13.12px] h-[13.12px]'
+                />
+                <span className="text-[14px] font-semibold font-[Gotham]">79</span>
               </div>
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[11rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
             </div>
-            <div className="flex items-center space-x-3">
+            {/* Share Btn */}
+            <div className="relative flex items-center space-x-2">
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[-1.5rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
               <FaShareAlt className="text-primary text-[20px]" />
-              <span>SHARE</span>
+              <span className="text-[14px] font-semibold font-[Gotham]">SHARE</span>
             </div>
           </div>
         </div>
