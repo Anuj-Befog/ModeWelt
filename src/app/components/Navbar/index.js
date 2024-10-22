@@ -47,8 +47,8 @@ const Navbar = () => {
         const offsetLeft = ref.current.offsetLeft;
         const width = ref.current.offsetWidth;
         setScrollerStyle({
-            left: `${offsetLeft}px`, // Move the scroller to the clicked link
-            width: `${width}px`      // Adjust the width of the scroller
+            left: `${offsetLeft - 19}px`, // Move the scroller to the clicked link
+            width: `${width + 36}px`      // Adjust the width of the scroller
         });
     };
 
@@ -199,19 +199,23 @@ const Navbar = () => {
                     <div className="absolute border-r-2 h-[81px] top-[-1px] border-[#DDDDDD] left-[62rem]"></div>
                     <div className="flex w-[330px] mr-[5rem] ">
                         <div className="relative flex items-center ">
-                            <Link href="/profile" className="flex items-center space-x-2">
+                            <Link href="/profile" className="flex items-center gap-[0.5rem] space-x-2">
                                 <Image
                                     src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                                     width={100}
                                     height={100}
                                     alt="Profile"
-                                    className="w-8 h-8 rounded-full"
+                                    className="w-[42px] h-[42px] rounded-full"
                                 />
                                 <div>
-                                    <p className="text-[#181818] font-medium cursor-pointer">Befog <span className="text-[#A4528633] text-xs ">You</span> </p>
-                                    <p className="text-green-500 text-xs flex">
-                                        <span className='text-[#747474] text-[12px] '>375  views today</span>+32 <MdArrowOutward />
-                                    </p>
+                                    <div className='flex gap-[0.5rem]'>
+                                        <div className="text-[#181818] font-[600] font-[Arial] text-[12px] cursor-pointer uppercase">Aditya Kumar </div>
+                                        <div className="text-[#A4528633] text-[12px] uppercase font-[Gotham]">You</div>
+                                    </div>
+                                    <div className='flex gap-[0.5rem]'>
+                                        <div className='text-[#747474] text-[12px] font-[Gotham]'>375  views today</div>
+                                        <div className="text-[#02B033] text-[12px] flex font-[Gotham]">+32 <MdArrowOutward className='relative w-[12px] h-[12px] top-[3px]'/></div>
+                                    </div>
                                 </div>
                             </Link>
                         </div>
@@ -220,7 +224,7 @@ const Navbar = () => {
                     <div className='relative right-[5rem] bottom-[3px] flex flex-col items-center w-[90px] justify-center' onClick={toggleModal}>
                         <OtherModal isModalOpen={isModalOpen} closeModal={closeModal} />
                         <FaEllipsisH className="text-gray-700 hover:text-primary text-[20px] cursor-pointer w-[24px] h-[24px] " />
-                        <button className="text-[#181818] text-[16px] w-[44px] h-[11px] hover:text-primary">
+                        <button className="text-[#181818] text-[12px] w-[44px] h-[11px] hover:text-primary font-[600]">
                             OTHER
                         </button>
                     </div>
