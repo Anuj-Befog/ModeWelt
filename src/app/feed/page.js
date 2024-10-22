@@ -81,7 +81,7 @@ const Post = () => {
           {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
-              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              src="/assets/feedPage/profile.png"
               alt="Profile"
               width={100}
               height={100}
@@ -177,7 +177,7 @@ const Post = () => {
           {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
-              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              src="/assets/feedPage/profile.png"
               alt="Profile"
               width={100}
               height={100}
@@ -213,7 +213,7 @@ const Post = () => {
           {/* Image */}
           <div className="mt-3">
             <Image
-              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              src="/assets/feedPage/bc.png"
               alt="Post Image"
               width={790}
               height={300}
@@ -281,7 +281,7 @@ const Post = () => {
           {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
-              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              src="/assets/feedPage/profile.png"
               alt="Profile"
               width={100}
               height={100}
@@ -447,7 +447,7 @@ const Post = () => {
           {[1, 2, 3].map((_, index) => (
             <div key={index} className="flex w-[231px] h-[80px] mt-4 items-center justify-center p-3 gap-[0.5rem]">
               <Image
-                src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+                src="/assets/feedPage/profile.png"
                 alt="Group"
                 width={100}
                 height={100}
@@ -492,7 +492,7 @@ const Post = () => {
             {[1, 2, 3].map((_, index) => (
               <div key={index} className="flex items-center space-x-3 my-6">
                 <Image
-                  src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+                  src="/assets/feedPage/profilesquare.png"
                   alt="Trending Article"
                   width={100}
                   height={100}
@@ -507,7 +507,6 @@ const Post = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };
