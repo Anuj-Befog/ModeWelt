@@ -115,7 +115,7 @@ const Navbar = () => {
                             </Link>
                             <div className="absolute border-r-2 h-[90px] border-[#DDDDDD] top-[-2.1rem] left-[10.5rem]"></div>
                         </div>
-                        <ul className="relative hidden w-[519px] left-[1.3rem] md:flex space-x-6 justify-around mt-[-10px]">
+                        <ul className="relative hidden w-[519px] left-[1.3rem] md:flex space-x-6 justify-around mt-[-7px]">
                             {/* Scroller */}
                             <div
                                 className="absolute bottom-0 h-[3px] rounded-t-[50px] bg-gradient-to-r bg-[#A45286] top-[4rem] shadow-lg transition-all duration-300 ease-in-out"

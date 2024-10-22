@@ -13,6 +13,15 @@ const Post = () => {
   const [src, setSrc] = useState('/profile.png'); // Default image path
   const [expanded, setExpanded] = useState(false);
 
+  const text = `
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fuga, enim sunt nobis, iste quidem nam mollitia placeat optio sapiente, quam explicabo distinctio reprehenderit excepturi aliquam! Rem at cum neque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fuga, enim sunt nobis, iste quidem nam mollitia placeat optio sapiente, quam explicabo distinctio reprehenderit excepturi aliquam! Rem at cum neque.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet, odio eget luctus sodales, turpis ligula volutpat urna, nec efficitur dolor libero non erat. Aenean sit amet quam facilisis, commodo nisi ut, convallis erat.
+  `;
+
+  // Determine the trimmed text version (visible in collapsed state)
+  const trimmedText = text.substring(0, 250); // Show first 180 characters
+
   return (
     <div className="flex justify-center min-h-screen mt-12 space-x-14">
       {/* Left Section */}
@@ -31,12 +40,12 @@ const Post = () => {
             />
             <div className="flex space-x-4 items-center">
               {/* Link */}
-              <Image width={100} height={100} src='/assets/feedPage/link.png' className='w-[24px] h-[24px]' alt='link'/>
+              <Image width={100} height={100} src='/assets/feedPage/link.png' className='w-[24px] h-[24px]' alt='link' />
               {/* Image */}
-              <Image width={100} height={100} src='/assets/feedPage/image.png' className='w-[24px] h-[24px]' alt='image'/>
+              <Image width={100} height={100} src='/assets/feedPage/image.png' className='w-[24px] h-[24px]' alt='image' />
               {/* Video */}
-              <Image width={100} height={100} src='/assets/feedPage/video.png' className='w-[24px] h-[24px]' alt='video'/>
-              <div className="flex items-center  justify-center w-[32px] h-[32px] bg-[#d67eb5] rounded-lg">
+              <Image width={100} height={100} src='/assets/feedPage/video.png' className='w-[24px] h-[24px]' alt='video' />
+              <div className="flex items-center  justify-center w-[32px] h-[32px] bg-[#bb679c] rounded-lg">
                 <BsFillSendFill className="text-white" />
               </div>
             </div>
@@ -53,88 +62,184 @@ const Post = () => {
         </div>
 
 
-        {/* Post Section */}
-        {[1, 2].map((_, index) => (
-          <div key={index} className="bg-white w-[850px] h-auto my-4">
-            <div className="flex justify-between items-center px-4 py-2">
-              <p className="leading-[15px] text-[10px]">
-                <span className="text-[#A45286]">Ted Bell, Annette Nguyen</span> and
-                <span className="text-[#A45286]"> Cody Hawkins</span> liked this
-              </p>
-              <FaEllipsisH className="text-[#181818] hover:text-primary w-[24px] h-[24px]" />
-            </div>
-            <hr className="w-[850px] bg-gray-300 mb-3" />
+        {/* Post Text Section */}
+        <div className="bg-white w-[850px] h-auto my-4">
+          {/* Header Post */}
+          <div className="flex justify-between items-center px-4 py-2">
+            <p className="text-[10px] font-[Gotham] leading-[15px]">
+              <span className="text-[#A45286]">Ted Bell, Annette Nguyen</span> and
+              <span className="text-[#A45286]"> Cody Hawkins</span> liked this
+            </p>
 
-            <div className="flex items-center mt-3 space-x-4 px-8">
-              <Image
-                src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
-                alt="Profile"
-                width={40}
-                height={40}
-                className="rounded-full w-[52px] h-[52px]"
-                onError={() => setSrc("/Images/Images1.png")}
-              />
-              <div>
-                <h1 className="text-[14px] font-bold">Adity Kumar</h1>
-                <span className="text-[10px]">Illustration Designer</span>
-              </div>
-            </div>
+            {/* Share Pointers */}
+            <FaEllipsisH className="text-[#181818] cursor-pointer hover:text-primary w-[20px] h-[24px]" />
+          </div>
 
-            <div className="mt-1 text-gray-600">
-              <p className="px-8 text-[14px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fuga, enim sunt nobis, iste quidem nam mollitia placeat optio sapiente, quam explicabo distinctio reprehenderit excepturi aliquam! Rem at cum neque.
-                {expanded && (
-                  <span>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga nihil autem, rem ratione dolorum quis quidem mollitia recusandae iusto.
-                  </span>
-                )}
-              </p>
-              {!expanded ? (
-                <span
-                  className="text-[#A45286] pl-7 text-[12px] cursor-pointer"
-                  onClick={() => setExpanded(true)}
-                >
-                  Read more
-                </span>
-              ) : (
-                <span
-                  className="text-[#A45286] pl-7 text-[12px] cursor-pointer"
-                  onClick={() => setExpanded(false)}
-                >
-                  Show less
-                </span>
-              )}
-              <div className="mt-3">
-                <Image
-                  src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
-                  alt="Post Image"
-                  width={790}
-                  height={300}
-                  className="object-cover mx-auto w-[790px] h-[300px]"
-                />
-              </div>
-            </div>
+          {/* Border Top of Post */}
+          <div className="w-[850px] h-[1px] bg-[#F4F4F4] mb-3"></div>
 
-            <div className="flex justify-between items-center px-9 mb-4 mt-4">
-              <div className="flex space-x-6"> {/* Increased spacing */}
-                <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
-                  <FaThumbsUp className="text-primary text-[20px]" />
-                  <span className="text-[14px]">28</span>
-                </div>
-                <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
-                  <FaComment className="text-primary text-[20px]" />
-                  <span className="text-[14px]">79</span>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaShareAlt className="text-primary text-[20px]" />
-                <span className="text-[14px]">SHARE</span>
-              </div>
+          <div className="flex items-center mt-3 space-x-4 px-8">
+            <Image
+              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              alt="Profile"
+              width={100}
+              height={100}
+              className="rounded-full w-[52px] h-[52px]"
+              onError={() => setSrc("/Images/Images1.png")}
+            />
+            <div className='flex flex-col'>
+              <h1 className="text-[14px] font-[Arial] font-[700]">Aditya Kumar</h1>
+              <span className="text-[10px] font-[Arial] font-[400]">Illustration Designer</span>
             </div>
           </div>
-        ))}
 
+          {/* Desciption Post */}
+          <div className="mt-1 text-gray-600 relative">
+            <div className="relative">
+              <div
+                className={`px-8 mt-4 text-[14px] transition-all duration-500 ease-in-out overflow-hidden ${expanded ? 'max-h-[1000px]' : 'max-h-[100px]'
+                  }`}
+              >
+                {/* Show full or trimmed content based on the expanded state */}
+                {expanded ? text : trimmedText + '...'}
+              </div>
 
+              <button
+                className="px-8 my-2 mt-4 text-[#A45286] text-[12px] font-[Gotham] font-semibold uppercase cursor-pointer transition-all duration-300"
+                onClick={() => setExpanded(!expanded)}
+              >
+                {expanded ? 'Read Less' : 'Read More'}
+              </button>
+            </div>
+          </div>
+
+          {/* Border Bottom of Post */}
+          <div className="w-[850px] h-[1px] bg-[#F4F4F4] mt-1 mb-3"></div>
+
+          {/* Stats Post */}
+          <div className="flex justify-between items-center px-9 mb-4 mt-4">
+            {/* Stats */}
+            <div className="relative flex gap-[4rem]"> {/* Increased spacing */}
+              {/* Likes */}
+              <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
+                <FaThumbsUp className="text-primary text-[20px] w-[13.12px] h-[13.12px]" />
+                <span className="text-[14px] font-semibold font-[Gotham]">28</span>
+              </div>
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[4.4rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+              {/* Comments */}
+              <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
+                <FaComment className="text-primary text-[20px] w-[13.12px] h-[13.12px]" />
+                <span className="text-[14px] font-semibold font-[Gotham]">79</span>
+              </div>
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[11rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+            </div>
+            {/* Share Btn */}
+            <div className="relative flex items-center space-x-2">
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[-1.5rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+              <FaShareAlt className="text-primary text-[20px]" />
+              <span className="text-[14px] font-semibold font-[Gotham]">SHARE</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Post Text Section with Photo */}
+        <div className="bg-white w-[850px] h-auto my-4">
+          {/* Header Post */}
+          <div className="flex justify-between items-center px-4 py-2">
+            <p className="text-[10px] font-[Gotham] leading-[15px]">
+              <span className="text-[#A45286]">Audrey Alexander </span>
+              comment this
+            </p>
+
+            {/* Share Pointers */}
+            <FaEllipsisH className="text-[#181818] cursor-pointer hover:text-primary w-[20px] h-[24px]" />
+          </div>
+
+          {/* Border Top of Post */}
+          <div className="w-[850px] h-[1px] bg-[#F4F4F4] mb-3"></div>
+
+          <div className="flex items-center mt-3 space-x-4 px-8">
+            <Image
+              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              alt="Profile"
+              width={100}
+              height={100}
+              className="rounded-full w-[52px] h-[52px]"
+              onError={() => setSrc("/Images/Images1.png")}
+            />
+            <div className='flex flex-col'>
+              <h1 className="text-[14px] font-[Arial] font-[700]">Aditya Kumar</h1>
+              <span className="text-[10px] font-[Arial] font-[400]">Illustration Designer</span>
+            </div>
+          </div>
+
+          {/* Desciption Post */}
+          <div className="mt-1 text-gray-600 relative">
+            <div className="relative">
+              <div
+                className={`px-8 mt-4 text-[14px] transition-all duration-500 ease-in-out overflow-hidden ${expanded ? 'max-h-[1000px]' : 'max-h-[100px]'
+                  }`}
+              >
+                {/* Show full or trimmed content based on the expanded state */}
+                {expanded ? text : trimmedText + '...'}
+              </div>
+
+              <button
+                className="px-8 my-2 mt-4 text-[#A45286] text-[12px] font-[Gotham] font-semibold uppercase cursor-pointer transition-all duration-300"
+                onClick={() => setExpanded(!expanded)}
+              >
+                {expanded ? 'Read Less' : 'Read More'}
+              </button>
+            </div>
+          </div>
+
+          {/* Image */}
+          <div className="mt-3">
+            <Image
+              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              alt="Post Image"
+              width={790}
+              height={300}
+              className="object-cover mx-auto w-[790px] mb-6 h-[300px]"
+            />
+          </div>
+
+          {/* Border Bottom of Post */}
+          <div className="w-[850px] h-[1px] bg-[#F4F4F4] mt-1 mb-3"></div>
+
+          {/* Stats Post */}
+          <div className="flex justify-between items-center px-9 mb-4 mt-4">
+            {/* Stats */}
+            <div className="relative flex gap-[4rem]"> {/* Increased spacing */}
+              {/* Likes */}
+              <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
+                <FaThumbsUp className="text-primary text-[20px] w-[13.12px] h-[13.12px]" />
+                <span className="text-[14px] font-semibold font-[Gotham]">28</span>
+              </div>
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[4.4rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+              {/* Comments */}
+              <div className="flex items-center space-x-2"> {/* Adjusted icon-text spacing */}
+                <FaComment className="text-primary text-[20px] w-[13.12px] h-[13.12px]" />
+                <span className="text-[14px] font-semibold font-[Gotham]">79</span>
+              </div>
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[11rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+            </div>
+            {/* Share Btn */}
+            <div className="relative flex items-center space-x-2">
+              {/* Stats Border */}
+              <div className="absolute w-[1px] left-[-1.5rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+              <FaShareAlt className="text-primary text-[20px]" />
+              <span className="text-[14px] font-semibold font-[Gotham]">SHARE</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Post Text Section with Content */}
         <div className="bg-white h-[402px] my-4">
           <div className="flex justify-between items-center px-4 py-2">
             <p className="leading-[15px] text-[10px]">
@@ -222,8 +327,6 @@ const Post = () => {
             </div>
           </div>
         </div>
-
-
       </div>
 
       {/* Right Section */}
