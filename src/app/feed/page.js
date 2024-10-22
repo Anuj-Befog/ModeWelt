@@ -20,20 +20,23 @@ const Post = () => {
         {/* New Post Section */}
         <div className="bg-white h-[135px] p-5 my-4">
           <div className="flex items-center space-x-4">
-            <p className="text-[12px] pl-3 font-semibold font-[Gotham] text-[#181818]">NEW POST</p>
+            <p className="text-[12px] pl-3 font-semibold font-[Gotham] text-[#181818] uppercase">NEW POST</p>
           </div>
-          <hr className=" w-[790px] mx-auto mt-4 bg-gray-300 mb-4" />
-          <div className=" flex items-center px-2 justify-between text-gray-600">
+          <hr className=" w-[790px] h-[1px] mx-auto mt-4 bg-[#D7D7D7] mb-4" />
+          <div className="flex items-center px-2 justify-between text-[18px]">
             <input
               type="text"
               placeholder="What's on your mind?"
-              className="flex-grow mt-[-11px] p-1 text-[18px] rounded-md focus:outline-none"
+              className="flex-grow mt-[-11px] p-1 text-[18px] rounded-md focus:outline-none placeholder:text-[#18181833] placeholder:text-[18px]"
             />
-            <div className="flex space-x-4 mt-1">
-              <GrAttachment className="text-xl w-[24px] h-[24px] " />
-              <CiImageOn className="text-xl  w-[24px] h-[24px]" />
-              <CiVideoOn className="text-xl w-[24px] h-[24px]" />
-              <div className="flex items-center  justify-center w-[32px] h-[32px] bg-[#E188C1] rounded-lg">
+            <div className="flex space-x-4 items-center">
+              {/* Link */}
+              <Image width={100} height={100} src='/assets/feedPage/link.png' className='w-[24px] h-[24px]' alt='link'/>
+              {/* Image */}
+              <Image width={100} height={100} src='/assets/feedPage/image.png' className='w-[24px] h-[24px]' alt='image'/>
+              {/* Video */}
+              <Image width={100} height={100} src='/assets/feedPage/video.png' className='w-[24px] h-[24px]' alt='video'/>
+              <div className="flex items-center  justify-center w-[32px] h-[32px] bg-[#d67eb5] rounded-lg">
                 <BsFillSendFill className="text-white" />
               </div>
             </div>
@@ -43,8 +46,8 @@ const Post = () => {
         {/* Sort By Section */}
         <div className="flex justify-center items-center my-4 space-x-4">
           <hr className="flex-grow border-gray-300" />
-          <p className="text-center text-[12px]">
-            SORT BY <span className="font-semibold text-[#A45286]">Trending</span>
+          <p className="text-center text-[12px] font-[Gotham] font-[600] uppercase">
+            SORT BY: <span className="font-semibold text-[#A45286]">Trending</span>
           </p>
           <hr className="flex-grow border-gray-300" />
         </div>
@@ -134,12 +137,12 @@ const Post = () => {
 
         <div className="bg-white h-[402px] my-4">
           <div className="flex justify-between items-center px-4 py-2">
-              <p className="leading-[15px] text-[10px]">
-                <span className="text-[#A45286]">Ted Bell, Annette Nguyen</span> and
-                <span className="text-[#A45286]"> Cody Hawkins</span> liked this
-              </p>
-              <FaEllipsisH className="text-[#181818] hover:text-primary w-[24px] h-[24px]" />
-            </div>
+            <p className="leading-[15px] text-[10px]">
+              <span className="text-[#A45286]">Ted Bell, Annette Nguyen</span> and
+              <span className="text-[#A45286]"> Cody Hawkins</span> liked this
+            </p>
+            <FaEllipsisH className="text-[#181818] hover:text-primary w-[24px] h-[24px]" />
+          </div>
           <hr className=" w-[850px] bg-gray-300 mb-1" />
           <div className="flex items-center mt-4 px-8 space-x-4">
             <Image
@@ -159,7 +162,9 @@ const Post = () => {
             <div className="mt-3 space-y-4">
               <div className="w-[790px] h-[80px] bg-[#FFE3EF] flex items-center p-4 rounded-lg">
                 {/* Image in Circle */}
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src="/path-to-image.jpg"
                   alt="Circular"
                   className="w-42 h-42 rounded-full object-cover"
@@ -178,7 +183,9 @@ const Post = () => {
               </div>
               <div className="w-[790px] h-[80px] bg-[#FFE3EF] flex items-center p-4 rounded-lg">
                 {/* Image in Circle */}
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src="/path-to-image.jpg"
                   alt="Circular"
                   className="w-42 h-42 rounded-full object-cover"
@@ -294,7 +301,9 @@ const Post = () => {
 
             {[1, 2, 3].map((_, index) => (
               <div key={index} className="flex items-center space-y-4 space-x-3">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                   alt="Trending Article"
                   className="w-[80px] h-[52px]"

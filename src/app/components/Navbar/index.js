@@ -214,7 +214,7 @@ const Navbar = () => {
                                     </div>
                                     <div className='flex gap-[0.5rem]'>
                                         <div className='text-[#747474] text-[12px] font-[Gotham]'>375  views today</div>
-                                        <div className="text-[#02B033] text-[12px] flex font-[Gotham]">+32 <MdArrowOutward className='relative w-[12px] h-[12px] top-[3px]'/></div>
+                                        <div className="text-[#02B033] text-[12px] flex font-[Gotham]">+32 <MdArrowOutward className='relative w-[12px] h-[12px] top-[3px]' /></div>
                                     </div>
                                 </div>
                             </Link>
