@@ -182,7 +182,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="relative ml-[5rem] flex w-[270px]">
-                        <FaSearch className="absolute left-1 top-1/2 transform -translate-y-1/2 text-[#EBA5D1]" /> {/* Positioned Search Icon */}
+                        <FaSearch className="w-[24px] h-[24px] absolute left-1 top-1/2 transform -translate-y-1/2 text-[#bb679c]" /> {/* Positioned Search Icon */}
                         <input
                             type="text"
                             className="placeholder:text-left w-[12rem] ml-[1.875rem] h-[24px] text-[16px] font-[Gotham] text-[#CECECE] right-10 font-[100] pl-4 border-none outline-none" // Added padding to the left for the icon
