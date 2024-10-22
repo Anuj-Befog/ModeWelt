@@ -272,7 +272,7 @@ const Post = () => {
               High rated post from your feed
             </p>
             {/* Share Pointers */}
-            <FaEllipsisH className="text-[#181818] hover:text-primary w-[20px] h-[24px]" />
+            <FaEllipsisH className="text-[#181818] hover:text-primary cursor-pointer w-[20px] h-[24px]" />
           </div>
 
           {/* Border Top of Post */}
@@ -398,56 +398,64 @@ const Post = () => {
       </div>
 
       {/* Right Section */}
-      <div className=" mt-5 w-[290px]">
+      <div className="mt-5 w-[290px]">
         {/* Profile Section */}
         <div className="bg-white w-[290px] h-[280px] text-center mb-3">
           <Image
-            src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+            src="/assets/feedPage/cover.png"
             alt="Cover"
             width={290}
             height={120}
-            className="object-cover mb-4 w-[290px] h-[120px] "
+            className="object-cover mb-4 w-[290px] h-[120px]"
           />
           <div className="relative w-[100px] h-[100px] mx-auto">
             <Image
-              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              src="/assets/feedPage/profile.png"
               alt="Profile"
               width={100}
               height={100}
               className="rounded-full border-4 w-[100px] h-[100px] border-white object-cover -mt-16"
             />
           </div>
-          <div className="mt-2 text-[14px] font-bold">Befog website</div>
-          <p className="text-[#181818] text-[10px] px-7 h-[45px] ">Description Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tempore modi excepturi illum id fuga tenetur .</p>
+          <div className="mt-1 mb-2 text-[14px] font-[700] font-[Arial]">Aditya Kumar Kanaujiya</div>
+          <p className="text-[#181818] text-[12px] px-7 h-[45px] text-center font-[400] font-[Arial] leading-[18px]">
+            Freelance Fashion designer, 80+ projects in graphic design, textile design and creative projects. Open to offers.
+          </p>
         </div>
 
         {/* Write an Article */}
-        <div className="flex justify-center w-[290px] h-[75px] mb-3">
-          <button
-            className="rounded-md px-4 w-[269px] my-auto text-[12px] h-[32px] font-bold text-white"
-            style={{ background: 'linear-gradient(0deg, #A45286 0%, #DC85BC 100%)' }}
-          >
-            Write an article
-          </button>
+        <div className="bg-white w-[290px] h-[75px] text-center mb-3">
+          <div className="flex justify-center w-[290px] h-[75px] mb-3">
+            <button
+              className="rounded-md px-4 w-[269px] my-auto text-[12px] h-[32px] font-[700] font-[Arial] leading-[13.8px] text-white uppercase"
+              style={{ background: 'linear-gradient(0deg, #A45286 0%, #DC85BC 100%)' }}
+            >
+              Write new article
+            </button>
+          </div>
         </div>
 
         {/* My Groups Section */}
-        <div className="bg-white h-[400px] mb-3">
-          <p className="font-bold px-8 pt-4 text-[12px] pb-2 ">My Groups</p>
-          <hr className="border-t border-gray-300 w-[230px] mx-auto mt-2" />
+        <div className="bg-white h-[400px] flex flex-col justify-start items-center mb-3">
+          <div className='flex justify-between'>
+            <div className="font-[600] px-8 pt-4 text-[12px] pb-2 uppercase font-[Gotham] text-[#181818] leading-[11.48px]">My Groups</div>
+            <div className="font-[600] px-8 pt-4 text-[12px] pb-2 uppercase font-[Gotham] text-[#A45286] leading-[13.8px]">Edit list</div>
+          </div>
+
+          {/* Divider */}
+          <hr className="border-t border-[#F4F4F4] w-[230px] mx-auto mt-2" />
           {[1, 2, 3].map((_, index) => (
-            <div key={index} className="flex w-[231px] h-[80px] mx-auto my-auto mt-4 items-center p-3 space-y-4 space-x-3">
+            <div key={index} className="flex w-[231px] h-[80px] mt-4 items-center justify-center p-3 gap-[0.5rem]">
               <Image
                 src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                 alt="Group"
-                width={48}
-                height={48}
-                className="rounded-full w-[48px] h-[48px]"
+                width={100}
+                height={100}
+                className="rounded-full w-[52px] h-[52px]"
               />
-              <div className=" ">
-
-                <p className="font-medium text-[14px]  ">Fashion Designing </p>
-                <p className='text-[14px]' >University, Lucknow</p>
+              <div>
+                <p className="font-medium text-[14px]">Fashion Designing</p>
+                <p className="text-[14px]">University, Lucknow</p>
               </div>
             </div>
           ))}
@@ -455,41 +463,51 @@ const Post = () => {
 
         {/* Followed Hashtags Section */}
         <div className="bg-white h-[265px] p-4 mb-3">
-          <p className="font-semibold text-[12px]">Followed Hashtags</p>
-          <hr className="border-t border-gray-300 mt-2" />
-          <div className="flex flex-wrap items-center w-[259px] mt-4 space-x-3">
-            <p className="bg-[#FFE3EF] font-semibold rounded-md text-[12px] ">#Fashion</p>
-            <p className="bg-[#FFE3EF] font-semibold rounded-lg text-[12px] ">#Fashion</p>
+          <p className="font-[600] text-[12px] uppercase leading-[11.48px] font-[Gotham]">Followed hashtags</p>
 
+          {/* Divider */}
+          <hr className="border-t border-[#F4F4F4] mt-4" />
+
+          <div className="flex flex-wrap items-center w-[240px] mt-4 gap-[0.5rem]">
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#work</div>
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#business</div>
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#hr</div>
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#userinterface</div>
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#digital</div>
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#userexperience</div>
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#ux</div>
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#ui</div>
+            <div className="bg-[#FFE3EF] min-w-[64px] h-[32px] flex justify-center rounded-[4px] items-center my-[0.1rem] text-[12px] px-2 font-[Gotham] leading-[18px]">#freelance</div>
           </div>
         </div>
 
         {/* Trending Articles Section */}
         <div className="bg-white h-[300px] p-4">
-          <p className="font-bold text-[12px] ">Trending Articles</p>
-          <hr className="border-t border-gray-300 mt-2" />
-          <div className="w-[227px] h-[198px] mt-2 flex-wrap ">
+          <p className="font-[600] text-[12px] uppercase leading-[11.48px] font-[Gotham]">Trending Articles</p>
 
+          {/* Divider */}
+          <hr className="border-t border-gray-300 mt-4" />
+
+          <div className="w-[227px] h-[198px] mt-2">
             {[1, 2, 3].map((_, index) => (
-              <div key={index} className="flex items-center space-y-4 space-x-3">
+              <div key={index} className="flex items-center space-x-3 my-6">
                 <Image
-                  width={100}
-                  height={100}
                   src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                   alt="Trending Article"
+                  width={100}
+                  height={100}
                   className="w-[80px] h-[52px]"
                 />
-                <div className=" flex  flex-col ">
-                  <p className="text-semibold text-[14px] ">Fashion Designing</p>
-                  <p className="text-semibold text-[14px] ">Fashion Designing</p>
-                  <span className='text-[10px]'>jhbgvfc</span>
+                <div className="flex flex-col">
+                  <p className="font-semibold font-[Gotham] text-[14px] text-[#181818] leading-[17.5px] w-[132px]">How I make cool designs?</p>
+                  <span className="font-[Gotham] text-[10px] leading-[15px]">6,340 viewers</span>
                 </div>
-
               </div>
             ))}
           </div>
         </div>
       </div>
+
     </div>
   );
 };
