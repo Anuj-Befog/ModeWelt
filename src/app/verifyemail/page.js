@@ -18,7 +18,7 @@ export default function VerifyEmail() {
         } catch (error) {
             setError(true);
             console.log(error.message);
-            toast.error('Error occurred during email verification. Please try again!'); 
+            toast.error('Error occurred during email verification. Please try again!');
         }
     };
 
@@ -43,6 +43,8 @@ export default function VerifyEmail() {
         // eslint-disable-next-line
     }, [token]);
 
+    console.log(error)
+
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="bg-white rounded-lg shadow-lg w-3/5 md:flex md:flex-row overflow-hidden">
@@ -57,8 +59,8 @@ export default function VerifyEmail() {
                 {/* Right Section */}
                 <div className="md:w-1/2 bg-white p-8 flex flex-col items-center justify-center">
                     <h2 className="text-3xl font-bold text-purple-500 mb-6">Verify Your Email</h2>
-                    {error &&  (
-                        <div className="mb-4 text-red-500 font-semibold text-lg">Error occurred during email verification. Please try again!</div>   
+                    {error.length > 0 && (
+                        <div className="mb-4 text-red-500 font-semibold text-lg">Error occurred during email verification. Please try again!</div>
                     )}
                     {verified && (
                         <div className="mb-4">
