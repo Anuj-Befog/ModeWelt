@@ -53,7 +53,7 @@ function Page() {
                     <div className="mt-12 w-[850px] h-[64px] shadow-lg grid grid-cols-3 items-center border-b">
                         <button
                             onClick={() => setActiveSection('profile')}
-                            className={`w-full h-full text-white font-gotham font-semibold bg-[#A45286] rounded-md hover:bg-[#A45286] border-r last:border-r-0 ${activeSection === 'profile' ? 'bg-[#A45286]' : 'bg-gray-200'
+                            className={`w-full h-full text-white font-[Gotham] font-semibold bg-[#A45286] rounded-md hover:bg-[#A45286] border-r last:border-r-0 ${activeSection === 'profile' ? 'bg-[#A45286]' : 'bg-gray-200'
                                 }`}
                         >
                             Profile
@@ -61,7 +61,7 @@ function Page() {
 
                         <button
                             onClick={() => setActiveSection('activities')}
-                            className={`w-full font-gotham font-bold h-full border-r last:border-r-0 ${activeSection === 'activities' ? 'bg-[#A45286] text-white' : 'bg-gray-200'
+                            className={`w-full font-[Gotham] font-bold h-full border-r last:border-r-0 ${activeSection === 'activities' ? 'bg-[#A45286] text-white' : 'bg-gray-200'
                                 }`}
                         >
                             Activity & Interests
@@ -69,7 +69,7 @@ function Page() {
 
                         <button
                             onClick={() => setActiveSection('articles')}
-                            className={`w-full font-gotham font-bold h-full ${activeSection === 'articles' ? 'bg-[#A45286] text-white' : 'bg-gray-200'
+                            className={`w-full font-[Gotham] font-bold h-full ${activeSection === 'articles' ? 'bg-[#A45286] text-white' : 'bg-gray-200'
                                 }`}
                         >
                             Articles (3)
@@ -216,7 +216,7 @@ function Page() {
                     <div className="mt-12  h-[355px] w-[850px] shadow-lg p-6">
                         {/* Header Section */}
                         <div className="flex items-center mb-3 space-x-5">
-                            <h1 className="font-bold w-[75px] font-gotham ">Project</h1>
+                            <h1 className="font-bold w-[75px] font-[Gotham]">Project</h1>
                             <p className='text-[18px] text-[#747474] ' >3 of 12</p>
                         </div>
 
@@ -272,7 +272,7 @@ function Page() {
                     <div className="w-[850px] mt-8 shadow-lg h-[228px] p-4">
                         {/* Project Title Section */}
                         <div className="flex space-x-5 mt-3">
-                            <h1 className="font-bold font-gotham  ">Skills & Endoresments</h1>
+                            <h1 className="font-bold font-[Gotham] ">Skills & Endoresments</h1>
                         </div>
 
                         {/* Flex container for child divs */}
@@ -430,7 +430,7 @@ function Page() {
                         </div>
 
                         <div className="h-[427px] mt-5 shadow-lg ">
-                            <div className="space-x-20 w-[230px] font-gotham mx-auto mt-2">
+                            <div className="space-x-20 w-[230px] font-[Gotham] mx-auto mt-2">
                                 <span className="font-semibold">VISITORS</span>
                                 <span className=" text-right text-[#A45286] rounded-md hover:bg-[#A45286]  font-semibold ">VIEW ALL</span>
                             </div>
@@ -482,7 +482,7 @@ function Page() {
 
                         <div className="h-[338px] mt-5 shadow-lg ">
                             <div className="flex items-center p-3">
-                                <span className="font-gotham font-semibold text-center ml-2 ">YOU MAY LIKE THESE COURCES</span>
+                                <span className="font-[Gotham] font-semibold text-center ml-2 ">YOU MAY LIKE THESE COURCES</span>
                             </div>
                             <hr className="w-[230px] mx-auto" />
                             <div className="flex flex-col items-start m-4 w-[228px] h-[198px] justify-center text-center space-y-3"> {/* Added spacing between items */}

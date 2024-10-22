@@ -31,7 +31,7 @@ const Footer = () => {
     return (
         <>
             <footer className="bg-[#E7E7E7] text-[#934276] mt-auto relative">
-                <div className="line w-[103%] mx-auto h-px bg-[#A45286]" />
+                <div className="line w-full mx-auto h-px bg-[#A45286]" />
                 <div className="footer-container max-w-[100rem] mx-auto px-[3%] py-12 grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-3">
                     <div className="md:col-span-1 sm:col-span-2 block lg:mb-0 md:mb-5 mb-3">
                         <div className="logo-cont w-fit flex justify-center mt-16">

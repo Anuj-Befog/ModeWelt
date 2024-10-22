@@ -67,7 +67,7 @@ const Navbar = () => {
         if (activeRef && activeRef.current) {
             const { offsetLeft, offsetWidth } = activeRef.current;
             setScrollerStyle({
-                left: `${offsetLeft}px`,
+                left: `${offsetLeft - 0.85}px`,
                 width: `${offsetWidth}px`,
             });
         }
@@ -111,30 +111,31 @@ const Navbar = () => {
                     <div className="flex items-center  space-x-4">
                         <div className="relative w-[130px] ">
                             <Link href='/'>
-                                <h1 className="uppercase text-[1.08rem] font-[100] text-primary font-[Bungee] mr-[1.6rem]">Fashionista</h1>
+                                <h1 className="uppercase text-[20px] font-[400] text-primary font-[Bungee] pl-[0.55rem]">Fashionista</h1>
                             </Link>
-                            <div className="absolute border-r-2 h-[89px] border-[#DDDDDD] top-[-2.2rem] left-[8rem]"></div>
+                            <div className="absolute border-r-2 h-[89px] border-[#DDDDDD] top-[-2.2rem] left-[10.5rem]"></div>
                         </div>
-                        <ul className="hidden w-[519px] ml-1 md:flex space-x-6 justify-around mt-[-10px]">
+                        <ul className="hidden w-[519px] pl-[2.7rem] md:flex space-x-6 justify-around mt-[-10px]">
+                            {/* Scroller */}
                             <div
                                 className="absolute bottom-0 h-[2px] bg-gradient-to-r bg-[#A45286] shadow-lg rounded-full transition-all duration-300 ease-in-out"
-                                style={scrollerStyle}
-                            ></div>
+                                style={scrollerStyle}>
+                            </div>
 
-
+                            {/* Navigation Links */}
                             <li
                                 ref={feedRef}
                                 onClick={() => handleLinkClick('/feed', feedRef)}
-                                className="text-[#181818] hover:text-primary text-[15px] uppercase cursor-pointer flex items-center flex-col">
+                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/feed" className="flex flex-col items-center">
-                                    <SlFeed className="my-2 w-[24px] h-[24px] " />
+                                    <SlFeed className="my-2 w-[24px] h-[24px]" />
                                     Feed
                                 </Link>
                             </li>
                             <li
                                 ref={networkRef}
                                 onClick={() => handleLinkClick('/network', networkRef)}
-                                className="text-[#181818] hover:text-primary text-[15px] uppercase cursor-pointer flex items-center flex-col">
+                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/network" className="flex flex-col items-center">
                                     <GoPeople className="my-2 w-[24px] h-[24px]" />
                                     Network
@@ -143,7 +144,7 @@ const Navbar = () => {
                             <li
                                 ref={jobsRef}
                                 onClick={() => handleLinkClick('/jobs', jobsRef)}
-                                className="text-[#181818] hover:text-primary text-[15px] uppercase cursor-pointer flex items-center flex-col">
+                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/jobs" className="flex flex-col items-center">
                                     <FiBriefcase className="my-2 w-[24px] h-[24px]" />
                                     Jobs
@@ -152,7 +153,7 @@ const Navbar = () => {
                             <li
                                 ref={chatRef}
                                 onClick={() => handleLinkClick('/chat', chatRef)}
-                                className="text-[#181818] hover:text-primary text-[15px] uppercase cursor-pointer flex items-center flex-col">
+                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/chat" className="flex flex-col items-center">
                                     <IoChatbubbleEllipsesOutline className="my-2 w-[24px] h-[24px]" />
                                     Chat
@@ -161,7 +162,7 @@ const Navbar = () => {
                             <li
                                 ref={notificationsRef}
                                 onClick={() => handleLinkClick('/notifications', notificationsRef)}
-                                className="text-[#181818] hover:text-primary text-[15px] uppercase cursor-pointer flex items-center flex-col">
+                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/notifications" className="flex flex-col items-center">
                                     <IoNotificationsOutline className="my-2 w-[24px] h-[24px]" />
                                     Notices
@@ -170,20 +171,21 @@ const Navbar = () => {
                             <li
                                 ref={shopRef}
                                 onClick={() => handleLinkClick('/shop', shopRef)}
-                                className="text-[#181818] hover:text-primary text-[15px] uppercase cursor-pointer flex items-center flex-col">
+                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/shop" className="flex flex-col items-center">
                                     <AiOutlineShop className="my-2 w-[24px] h-[24px]" />
                                     Shop
                                 </Link>
                             </li>
-                            <div className="absolute border-r-2 h-[80px] border-[#DDDDDD] top-[0] left-[44rem]"></div>
+                            <div className="absolute border-r-2 h-[81px] top-[-1px] border-[#DDDDDD] left-[44rem]"></div>
                         </ul>
                     </div>
 
-                    <div className="relative ml-12 flex w-[270px]">
+                    <div className="relative ml-[5rem] flex w-[270px]">
+                        <FaSearch className="absolute left-1 top-1/2 transform -translate-y-1/2 text-[#EBA5D1]" /> {/* Positioned Search Icon */}
                         <input
                             type="text"
-                            className=" h-[24px] text-lg text-[#CECECE] right-10 font-[100] text-center " // Added padding to the left for the icon
+                            className="placeholder:text-left w-[12rem] ml-[1.875rem] h-[24px] text-[16px] font-[Gotham] text-[#CECECE] right-10 font-[100] pl-4 border-none outline-none" // Added padding to the left for the icon
                             placeholder={placeholder}
                             onFocus={() => setPlaceholder('')}
                             onBlur={() => setPlaceholder('Search')}
@@ -191,12 +193,11 @@ const Navbar = () => {
                             onChange={(e) => setSearchQuery(e.target.value)} // Update search query
                         />
                         <SearchModal isSearchOpen={isSearchOpen} closeModal={closeModal} />
-                        <FaSearch className="absolute left-1 top-1/2 transform -translate-y-1/2 text-[#EBA5D1]" /> {/* Positioned Search Icon */}
                     </div>
 
 
-                    <div className="absolute border-r-2 h-[80px] border-[#DDDDDD] left-[62rem]"></div>
-                    <div className="flex w-[330px] mr-32 ">
+                    <div className="absolute border-r-2 h-[81px] top-[-1px] border-[#DDDDDD] left-[62rem]"></div>
+                    <div className="flex w-[330px] mr-[5rem] ">
                         <div className="relative flex items-center ">
                             <Link href="/profile" className="flex items-center space-x-2">
                                 <Image
@@ -215,16 +216,15 @@ const Navbar = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="absolute border-r-2 h-[80px] border-[#DDDDDD] top-[0rem] left-[88rem]"></div>
-                    <div className='flex flex-col items-center w-[90px]  justify-center' onClick={toggleModal}>
+                    <div className="absolute border-r-2 h-[81px] top-[-1px] border-[#DDDDDD] left-[83rem]"></div>
+                    <div className='relative right-[5rem] bottom-[3px] flex flex-col items-center w-[90px] justify-center' onClick={toggleModal}>
                         <OtherModal isModalOpen={isModalOpen} closeModal={closeModal} />
                         <FaEllipsisH className="text-gray-700 hover:text-primary text-[20px] cursor-pointer w-[24px] h-[24px] " />
                         <button className="text-[#181818] text-[16px] w-[44px] h-[11px] hover:text-primary">
                             OTHER
                         </button>
-
                     </div>
-
+                    <div className="absolute border-r-2 h-[81px] top-[-1px] border-[#DDDDDD] left-[91.5rem]"></div>
                 </div>
 
                 {/* Mobile Menu */}

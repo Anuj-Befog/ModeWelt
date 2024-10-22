@@ -10,7 +10,7 @@ function SearchModal({ isSearchOpen, closeModal }) {
                 tabIndex="-1"
                 className={`${isSearchOpen ? 'flex' : 'hidden'} fixed top-[80px] right-0 left-0 z-50 justify-center items-center h-full overflow-hidden`}
             >
-                <div className="relative w-[370px] h-[800px] max-h-full">
+                <div className="relative w-[370px] h-[800px] max-h-full left-[6rem] top-[0.3rem]">
                     <div className="relative bg-white rounded-lg shadow z-50">
                         {/* Close Button */}
                         <button

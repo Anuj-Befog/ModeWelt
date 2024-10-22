@@ -101,7 +101,7 @@ export default function Welcome() {
                     <div id="presuccess" className="h-24 w-24 rounded-full border-[4px] border-gray-500">
                         {/* Checkmark image inside the circle */}
                         <div id="check" className="scale-[0.1] opacity-0 relative top-[1.5rem] left-[0.6rem]">
-                            <Image className="w-[4rem]" src='/assets/check.png' width={100} height={100} alt="check" />
+                            <Image className="w-[4rem]" src='/assets/welcomePage/check.png' width={100} height={100} alt="check" />
                         </div>
                     </div>
 

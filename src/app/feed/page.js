@@ -14,13 +14,13 @@ const Post = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="flex justify-center min-h-screen mt-12 ml-[-6rem] space-x-14">
+    <div className="flex justify-center min-h-screen mt-12 space-x-14">
       {/* Left Section */}
       <div className="flex flex-col mb-8 w-[850px]"> {/* Set the width here */}
         {/* New Post Section */}
         <div className="bg-white border h-[135px] shadow-lg p-5 my-4">
           <div className="flex items-center space-x-4">
-            <p className="text-[12px] pl-3 font-semibold font-gotham text-[#181818]">NEW POST</p>
+            <p className="text-[12px] pl-3 font-semibold font-[Gotham] text-[#181818]">NEW POST</p>
           </div>
           <hr className=" w-[790px] mx-auto mt-4 bg-gray-300 mb-4" />
           <div className=" flex items-center px-2 justify-between text-gray-600">

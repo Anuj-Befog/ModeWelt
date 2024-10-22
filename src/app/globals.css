@@ -33,7 +33,21 @@
 /* Fonts */
 @font-face {
     font-family: 'Bungee';
-    src: url('/fonts/Bungee-Regular.ttf') format('truetype');
+    src: url('/fonts/Bungee/Bungee-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham/gothampro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial';
+    src: url('/fonts/Arial/ARIAL.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

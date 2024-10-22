@@ -6,7 +6,7 @@ function Profile() {
             <div className="mt-12 w-[850px] h-[170px] shadow-lg">
                 <div className="p-6 h-full flex flex-col ">
                     {/* Title Section */}
-                    <h1 className="font-bold mb-3 w-[58px] font-gotham h-[18px]">About</h1>
+                    <h1 className="font-bold mb-3 w-[58px] font-[Gotham] h-[18px]">About</h1>
                     {/* Paragraph Section */}
                     <p className="text-sm">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur nobis quo veritatis ullam doloribus,
