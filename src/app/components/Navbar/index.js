@@ -67,8 +67,8 @@ const Navbar = () => {
         if (activeRef && activeRef.current) {
             const { offsetLeft, offsetWidth } = activeRef.current;
             setScrollerStyle({
-                left: `${offsetLeft - 0.85}px`,
-                width: `${offsetWidth}px`,
+                left: `${offsetLeft - 19}px`,
+                width: `${offsetWidth + 36}px`,
             });
         }
     }, [activeLink]);
@@ -118,7 +118,7 @@ const Navbar = () => {
                         <ul className="relative hidden w-[519px] left-[1.3rem] md:flex space-x-6 justify-around mt-[-10px]">
                             {/* Scroller */}
                             <div
-                                className="absolute bottom-0 h-[2px] bg-gradient-to-r bg-[#A45286] top-[4.5rem] shadow-lg rounded-full transition-all duration-300 ease-in-out"
+                                className="absolute bottom-0 h-[3px] rounded-t-[50px] bg-gradient-to-r bg-[#A45286] top-[4rem] shadow-lg transition-all duration-300 ease-in-out"
                                 style={scrollerStyle}>
                             </div>
 

@@ -18,7 +18,7 @@ const Post = () => {
       {/* Left Section */}
       <div className="flex flex-col mb-8 w-[850px]"> {/* Set the width here */}
         {/* New Post Section */}
-        <div className="bg-white border h-[135px] shadow-lg p-5 my-4">
+        <div className="bg-white h-[135px] p-5 my-4">
           <div className="flex items-center space-x-4">
             <p className="text-[12px] pl-3 font-semibold font-[Gotham] text-[#181818]">NEW POST</p>
           </div>
@@ -52,7 +52,7 @@ const Post = () => {
 
         {/* Post Section */}
         {[1, 2].map((_, index) => (
-          <div key={index} className="bg-white w-[850px] h-auto shadow-lg my-4">
+          <div key={index} className="bg-white w-[850px] h-auto my-4">
             <div className="flex justify-between items-center px-4 py-2">
               <p className="leading-[15px] text-[10px]">
                 <span className="text-[#A45286]">Ted Bell, Annette Nguyen</span> and
@@ -132,7 +132,7 @@ const Post = () => {
         ))}
 
 
-        <div className="bg-white h-[402px] shadow-lg my-4">
+        <div className="bg-white h-[402px] my-4">
           <div className="flex justify-between items-center px-4 py-2">
               <p className="leading-[15px] text-[10px]">
                 <span className="text-[#A45286]">Ted Bell, Annette Nguyen</span> and
@@ -222,7 +222,7 @@ const Post = () => {
       {/* Right Section */}
       <div className=" mt-5 w-[290px]">
         {/* Profile Section */}
-        <div className="bg-white w-[290px] h-[280px] text-center shadow-lg mb-3">
+        <div className="bg-white w-[290px] h-[280px] text-center mb-3">
           <Image
             src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
             alt="Cover"
@@ -244,9 +244,9 @@ const Post = () => {
         </div>
 
         {/* Write an Article */}
-        <div className="flex justify-center  shadow-lg w-[290px] h-[75px] mb-3">
+        <div className="flex justify-center w-[290px] h-[75px] mb-3">
           <button
-            className="rounded-md px-4 w-[269px] my-auto text-[12px] h-[32px] font-bold text-white shadow-lg"
+            className="rounded-md px-4 w-[269px] my-auto text-[12px] h-[32px] font-bold text-white"
             style={{ background: 'linear-gradient(0deg, #A45286 0%, #DC85BC 100%)' }}
           >
             Write an article
@@ -254,11 +254,11 @@ const Post = () => {
         </div>
 
         {/* My Groups Section */}
-        <div className="bg-white h-[400px] shadow-lg mb-3">
+        <div className="bg-white h-[400px] mb-3">
           <p className="font-bold px-8 pt-4 text-[12px] pb-2 ">My Groups</p>
           <hr className="border-t border-gray-300 w-[230px] mx-auto mt-2" />
           {[1, 2, 3].map((_, index) => (
-            <div key={index} className="flex w-[231px] h-[80px] shadow-lg mx-auto my-auto mt-4 items-center p-3 space-y-4 space-x-3">
+            <div key={index} className="flex w-[231px] h-[80px] mx-auto my-auto mt-4 items-center p-3 space-y-4 space-x-3">
               <Image
                 src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                 alt="Group"
@@ -276,7 +276,7 @@ const Post = () => {
         </div>
 
         {/* Followed Hashtags Section */}
-        <div className="bg-white h-[265px] p-4 shadow-lg mb-3">
+        <div className="bg-white h-[265px] p-4 mb-3">
           <p className="font-semibold text-[12px]">Followed Hashtags</p>
           <hr className="border-t border-gray-300 mt-2" />
           <div className="flex flex-wrap items-center w-[259px] mt-4 space-x-3">
@@ -287,7 +287,7 @@ const Post = () => {
         </div>
 
         {/* Trending Articles Section */}
-        <div className="bg-white h-[300px] p-4 shadow-lg">
+        <div className="bg-white h-[300px] p-4">
           <p className="font-bold text-[12px] ">Trending Articles</p>
           <hr className="border-t border-gray-300 mt-2" />
           <div className="w-[227px] h-[198px] mt-2 flex-wrap ">
