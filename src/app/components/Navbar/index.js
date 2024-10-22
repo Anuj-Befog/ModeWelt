@@ -113,12 +113,12 @@ const Navbar = () => {
                             <Link href='/'>
                                 <h1 className="uppercase text-[20px] font-[400] text-primary font-[Bungee] pl-[0.55rem]">Fashionista</h1>
                             </Link>
-                            <div className="absolute border-r-2 h-[89px] border-[#DDDDDD] top-[-2.2rem] left-[10.5rem]"></div>
+                            <div className="absolute border-r-2 h-[90px] border-[#DDDDDD] top-[-2.1rem] left-[10.5rem]"></div>
                         </div>
-                        <ul className="hidden w-[519px] pl-[2.7rem] md:flex space-x-6 justify-around mt-[-10px]">
+                        <ul className="relative hidden w-[519px] left-[1.3rem] md:flex space-x-6 justify-around mt-[-10px]">
                             {/* Scroller */}
                             <div
-                                className="absolute bottom-0 h-[2px] bg-gradient-to-r bg-[#A45286] shadow-lg rounded-full transition-all duration-300 ease-in-out"
+                                className="absolute bottom-0 h-[2px] bg-gradient-to-r bg-[#A45286] top-[4.5rem] shadow-lg rounded-full transition-all duration-300 ease-in-out"
                                 style={scrollerStyle}>
                             </div>
 
@@ -177,7 +177,7 @@ const Navbar = () => {
                                     Shop
                                 </Link>
                             </li>
-                            <div className="absolute border-r-2 h-[81px] top-[-1px] border-[#DDDDDD] left-[44rem]"></div>
+                            <div className="absolute border-r-2 h-[81px] top-[-7px] border-[#DDDDDD] left-[32.5rem]"></div>
                         </ul>
                     </div>
 
