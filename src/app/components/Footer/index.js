@@ -1,10 +1,12 @@
 "use client";
+
 import Link from "next/link";
 import React from "react";
 // import { FaInstagram, FaLinkedin, FaSquareFacebook } from "react-icons/fa6";
 // import { useDispatch } from "react-redux";
-import { FaQuestionCircle } from 'react-icons/fa';
-import { CiSettings } from "react-icons/ci";
+// import { FaQuestionCircle } from 'react-icons/fa';
+// import { CiSettings } from "react-icons/ci";
+import Image from "next/image";
 
 const Footer = () => {
     // const dispatch = useDispatch();
@@ -30,22 +32,22 @@ const Footer = () => {
 
     return (
         <>
-            <footer className="bg-[#E7E7E7] text-[#934276] mt-auto relative">
-                <div className="line w-full mx-auto h-px bg-[#A45286]" />
-                <div className="footer-container max-w-[100rem] mx-auto px-[3%] py-12 grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-3">
-                    <div className="md:col-span-1 sm:col-span-2 block lg:mb-0 md:mb-5 mb-3">
-                        <div className="logo-cont w-fit flex justify-center mt-16">
-                            <Link href="/">
-                                <h1 className="uppercase text-xl font-[100] text-primary font-[Bungee]">Fashionista</h1>
-                            </Link>
+            <div className="line w-full mx-auto h-px bg-[#A45286]" />
+            <footer className="bg-[#F7F9FB] h-[215px] flex justify-center flex-col">
+                {/* Logo */}
+                <div className="px-[4rem] flex justify-around">
+                    <Link href="/" className="flex justify-center items-center">
+                        <div className="flex justify-center items-center">
+                            <h1 className="text-[20px] font-[400] text-[#934276] font-[Bungee] leading-[30px] uppercase">Fashionista</h1>
                         </div>
-                    </div>
+                    </Link>
 
+                    {/* Navigation */}
                     <div className="md:col-span-1 sm:col-span-2 lg:mb-0 md:mb-5 mb-3">
-                        <h1 className="font-bold text-[#333333] mb-5">Navigation</h1>
+                        <h1 className="font-bold text-[#333333] text-[12px] mb-5 font-[Gotham]">Navigation</h1>
                         <ul>
                             {use_case.map((link, index) => (
-                                <li key={index} className="md:my-1.5 my-0 md:text-base text-sm">
+                                <li key={index} className="md:my-1.5 my-0 md:text-[12px] text-[#181818] text-sm font-[Gotham]">
                                     <Link
                                         href={link.link}
                                         className="py-0.5 text-black block w-full hover:text-[#A45286] duration-200 ease-in-out transition-all"
@@ -57,11 +59,10 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="md:col-span-1 sm:col-span-2 lg:mb-0 md:mb-5 mb-3">
-                        <h1 className="font-bold text-[#333333] mb-5">Services</h1>
+                    <div className="md:col-span-1 sm:col-span-2 lg:mb-0 md:mb-5 mb-3 flex items-end">
                         <ul>
                             {services.map((link, index) => (
-                                <li key={index} className="md:my-1.5 my-0 md:text-base text-sm">
+                                <li key={index} className="md:my-1.5 my-0 md:text-[12px] text-[#181818] text-sm font-[Gotham]">
                                     <Link
                                         href={link.link}
                                         className="py-0.5 text-black block w-full hover:text-[#A45286] duration-200 ease-in-out transition-all"
@@ -73,11 +74,10 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="md:col-span-1 sm:col-span-2 lg:mb-0 md:mb-5 mb-3">
-                        <h1 className="font-bold text-[#333333] mb-5">Explore</h1>
+                    <div className="md:col-span-1 sm:col-span-2 lg:mb-0 md:mb-5 mb-3 flex items-center">
                         <ul>
                             {explore.map((link, index) => (
-                                <li key={index} className="md:my-1.5 my-0 md:text-base text-sm">
+                                <li key={index} className="md:my-1.5 my-0 md:text-[12px] text-[#181818] text-sm font-[Gotham]">
                                     <Link
                                         href={link.link}
                                         className="py-0.5 text-black block w-full hover:text-[#A45286] duration-200 ease-in-out transition-all"
@@ -91,29 +91,41 @@ const Footer = () => {
 
                     {/* Fast Access Section */}
                     <div className="md:col-span-1 sm:col-span-2">
-                        <h1 className="font-bold text-[#333333] mb-5">Fast Access</h1>
+                        <h1 className="font-bold text-[#333333] text-[12px] mb-5 font-[Gotham]">Fast Access</h1>
                         <ul>
                             <li className="md:my-1.5 my-0 md:text-base text-sm relative">
                                 <Link href="/quick-access-1" className="py-0.5 block w-full duration-200 ease-in-out transition-all">
                                     <button
                                         type="button"
-                                        className="text-[#FFFFFF] bg-[#934276]  border border-[#934276] w-[10rem] focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center  me-2 mb-2"
+                                        className="font-[Gotham] text-[#FFFFFF] bg-[#934276] border border-[#934276] w-[170px] h-[32px] gap-[3rem] focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-[12px] px-3 py-2.5 inline-flex items-center me-2 mb-2 uppercase"
                                     >
                                         Questions?
-                                        <FaQuestionCircle className="ml-24 absolute text-xl" /> {/* Add icon with margin */}
-                                    </button>                               
-                                     </Link>
+                                        <Image
+                                            src="/assets/footer/question.png"
+                                            className="w-[16px] h-[16px]"
+                                            alt="question"
+                                            width={200}
+                                            height={200}
+                                        />
+                                    </button>
+                                </Link>
                             </li>
                             <li className="md:my-1.5 my-0 md:text-base text-sm relative">
                                 <Link href="/quick-access-1" className="py-0.5 block w-full  duration-200 ease-in-out transition-all">
                                     <button
                                         type="button"
-                                        className="text-[#934276] bg-white border border-[#934276] focus:ring-4 focus:outline-none w-[10rem] focus:ring-gray-100 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center  me-2 mb-2"
+                                        className="font-[Gotham] text-[#934276] bg-white border border-[#934276] w-[170px] h-[32px] gap-[4.1rem] focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-[12px] px-3 py-2.5 inline-flex items-center me-2 mb-2 uppercase"
                                     >
                                         Settings
-                                        <CiSettings className=" ml-24 text-3xl absolute text-[#934276] "/>
-                                        </button>                               
-                                     </Link>
+                                        <Image
+                                            src="/assets/footer/setting.png"
+                                            className="w-[16px] h-[16px]"
+                                            alt="setting"
+                                            width={200}
+                                            height={200}
+                                        />
+                                    </button>
+                                </Link>
                             </li>
 
                         </ul>
@@ -121,18 +133,16 @@ const Footer = () => {
 
                     {/* Language Section */}
                     <div className="md:col-span-1 sm:col-span-2">
-                        <h1 className="font-bold text-[#333333] mb-5">Language</h1>
+                        <h1 className="font-bold text-[#333333] text-[12px] mb-5 font-[Gotham]">Language</h1>
                         <ul>
                             <li>
                                 <select
-                                    className="border-2 border-black rounded-md py-1 px-2"
+                                    className="w-[270px] h-[32px] border-[1px] border-[#F0F0F0] text-[#181818] py-1 px-2 uppercase"
                                 >
-                                    <option value="">Select Language</option>
-                                    <option value="en">English</option>
-                                    <option value="es">Spanish</option>
-                                    <option value="fr">French</option>
-                                    <option value="de">German</option>
-                                    {/* Add more languages as needed */}
+                                    <option className="text-[#181818] font-[Gotham] text-[12px] leading-[11.48px] uppercase" value="">English</option>
+                                    <option className="text-[#181818] font-[Gotham] text-[12px] leading-[11.48px] uppercase" value="es">Spanish</option>
+                                    <option className="text-[#181818] font-[Gotham] text-[12px] leading-[11.48px] uppercase" value="fr">French</option>
+                                    <option className="text-[#181818] font-[Gotham] text-[12px] leading-[11.48px] uppercase" value="de">German</option>
                                 </select>
                             </li>
                         </ul>
