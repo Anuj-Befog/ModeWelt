@@ -40,11 +40,11 @@ const Post = () => {
             />
             <div className="flex space-x-4 items-center">
               {/* Link */}
-              <Image width={100} height={100} src='/assets/feedPage/link.png' className='w-[24px] h-[24px]' alt='link' />
+              <Image width={100} height={100} src='/assets/feed/link.png' className='w-[24px] h-[24px]' alt='link' />
               {/* Image */}
-              <Image width={100} height={100} src='/assets/feedPage/image.png' className='w-[24px] h-[24px]' alt='image' />
+              <Image width={100} height={100} src='/assets/feed/image.png' className='w-[24px] h-[24px]' alt='image' />
               {/* Video */}
-              <Image width={100} height={100} src='/assets/feedPage/video.png' className='w-[24px] h-[24px]' alt='video' />
+              <Image width={100} height={100} src='/assets/feed/video.png' className='w-[24px] h-[24px]' alt='video' />
               <div className="flex items-center  justify-center w-[32px] h-[32px] bg-[#bb679c] rounded-lg">
                 <BsFillSendFill className="text-white" />
               </div>
@@ -81,7 +81,7 @@ const Post = () => {
           {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
-              src="/assets/feedPage/profile.png"
+              src="/assets/feed/profile.png"
               alt="Profile"
               width={100}
               height={100}
@@ -127,7 +127,7 @@ const Post = () => {
                   height={100}
                   width={100}
                   alt='like'
-                  src='/assets/feedPage/like.png'
+                  src='/assets/feed/like.png'
                   className='w-[13.12px] h-[13.12px]'
                 />
                 <span className="text-[14px] font-semibold font-[Gotham]">28</span>
@@ -140,7 +140,7 @@ const Post = () => {
                   height={100}
                   width={100}
                   alt='like'
-                  src='/assets/feedPage/comment.png'
+                  src='/assets/feed/comment.png'
                   className='w-[13.12px] h-[13.12px]'
                 />
                 <span className="text-[14px] font-semibold font-[Gotham]">79</span>
@@ -177,7 +177,7 @@ const Post = () => {
           {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
-              src="/assets/feedPage/profile.png"
+              src="/assets/feed/profile.png"
               alt="Profile"
               width={100}
               height={100}
@@ -205,7 +205,7 @@ const Post = () => {
           {/* Image */}
           <div className="mt-5">
             <Image
-              src="/assets/feedPage/bc.png"
+              src="/assets/feed/bc.png"
               alt="Post Image"
               width={790}
               height={300}
@@ -226,7 +226,7 @@ const Post = () => {
                   height={100}
                   width={100}
                   alt='like'
-                  src='/assets/feedPage/like.png'
+                  src='/assets/feed/like.png'
                   className='w-[13.12px] h-[13.12px]'
                 />
                 <span className="text-[14px] font-semibold font-[Gotham]">28</span>
@@ -239,7 +239,7 @@ const Post = () => {
                   height={100}
                   width={100}
                   alt='like'
-                  src='/assets/feedPage/comment.png'
+                  src='/assets/feed/comment.png'
                   className='w-[13.12px] h-[13.12px]'
                 />
                 <span className="text-[14px] font-semibold font-[Gotham]">79</span>
@@ -273,7 +273,7 @@ const Post = () => {
           {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
-              src="/assets/feedPage/profile.png"
+              src="/assets/feed/profile.png"
               alt="Profile"
               width={100}
               height={100}
@@ -294,7 +294,7 @@ const Post = () => {
                 <Image
                   width={100}
                   height={100}
-                  src="/assets/feedPage/document.png"
+                  src="/assets/feed/document.png"
                   alt="Circular"
                   className="w-[42px] h-[42px] rounded-full object-cover position-center"
                 />
@@ -310,7 +310,7 @@ const Post = () => {
                   <Image
                     width={100}
                     height={100}
-                    src='/assets/feedPage/download.png'
+                    src='/assets/feed/download.png'
                     className='w-[24px] h-[24px]'
                     alt="download" />
                 </div>
@@ -320,7 +320,7 @@ const Post = () => {
                 <Image
                   width={100}
                   height={100}
-                  src="/assets/feedPage/document.png"
+                  src="/assets/feed/document.png"
                   alt="Circular"
                   className="w-[42px] h-[42px] rounded-full object-cover position-center"
                 />
@@ -336,7 +336,7 @@ const Post = () => {
                   <Image
                     width={100}
                     height={100}
-                    src='/assets/feedPage/download.png'
+                    src='/assets/feed/download.png'
                     className='w-[24px] h-[24px]'
                     alt="download" />
                 </div>
@@ -357,7 +357,7 @@ const Post = () => {
                   height={100}
                   width={100}
                   alt='like'
-                  src='/assets/feedPage/like.png'
+                  src='/assets/feed/like.png'
                   className='w-[13.12px] h-[13.12px]'
                 />
                 <span className="text-[14px] font-semibold font-[Gotham]">28</span>
@@ -370,7 +370,7 @@ const Post = () => {
                   height={100}
                   width={100}
                   alt='like'
-                  src='/assets/feedPage/comment.png'
+                  src='/assets/feed/comment.png'
                   className='w-[13.12px] h-[13.12px]'
                 />
                 <span className="text-[14px] font-semibold font-[Gotham]">79</span>
@@ -404,7 +404,7 @@ const Post = () => {
           {/* User Info */}
           <div className="flex items-center mt-3 space-x-4 px-8">
             <Image
-              src="/assets/feedPage/profile.png"
+              src="/assets/feed/profile.png"
               alt="Profile"
               width={100}
               height={100}
@@ -435,7 +435,7 @@ const Post = () => {
                   height={100}
                   width={100}
                   alt='like'
-                  src='/assets/feedPage/like.png'
+                  src='/assets/feed/like.png'
                   className='w-[13.12px] h-[13.12px]'
                 />
                 <span className="text-[14px] font-semibold font-[Gotham]">10</span>
@@ -448,7 +448,7 @@ const Post = () => {
                   height={100}
                   width={100}
                   alt='like'
-                  src='/assets/feedPage/comment.png'
+                  src='/assets/feed/comment.png'
                   className='w-[13.12px] h-[13.12px]'
                 />
                 <span className="text-[14px] font-semibold font-[Gotham]">0</span>
@@ -472,7 +472,7 @@ const Post = () => {
         {/* Profile Section */}
         <div className="bg-white w-[290px] h-[280px] text-center mb-3">
           <Image
-            src="/assets/feedPage/cover.png"
+            src="/assets/feed/cover.png"
             alt="Cover"
             width={290}
             height={120}
@@ -480,7 +480,7 @@ const Post = () => {
           />
           <div className="relative w-[100px] h-[100px] mx-auto">
             <Image
-              src="/assets/feedPage/profile.png"
+              src="/assets/feed/profile.png"
               alt="Profile"
               width={100}
               height={100}
@@ -517,7 +517,7 @@ const Post = () => {
           {[1, 2, 3].map((_, index) => (
             <div key={index} className="flex w-[231px] h-[80px] mt-4 items-center justify-center p-3 gap-[0.5rem]">
               <Image
-                src="/assets/feedPage/profile.png"
+                src="/assets/feed/profile.png"
                 alt="Group"
                 width={100}
                 height={100}
@@ -562,7 +562,7 @@ const Post = () => {
             {[1, 2, 3].map((_, index) => (
               <div key={index} className="flex items-center space-x-3 my-6">
                 <Image
-                  src="/assets/feedPage/profilesquare.png"
+                  src="/assets/feed/profilesquare.png"
                   alt="Trending Article"
                   width={100}
                   height={100}

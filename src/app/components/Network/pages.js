@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiUsers } from 'react-icons/fi';
 import Image from 'next/image';
-function pages() {
+function Network() {
     return (
         <div>
             <div>
@@ -121,4 +121,4 @@ function pages() {
     )
 }
 
-export default pages
+export default Network
