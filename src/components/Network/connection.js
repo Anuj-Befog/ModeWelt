@@ -98,67 +98,79 @@ const Connections = () => {
                     </div>
                 </div>
 
+                {/* Divider */}
                 <div className="flex items-center space-x-4">
                     {/* Left Line (HR) */}
-                    <hr className="flex-grow border-gray-300" />
+                    <hr className="flex-grow border-[#E7E7E7]" />
 
                     {/* Text */}
-                    <span className="text-gray-700 whitespace-nowrap text-lg font-bold">Recent Connections</span>
+                    <span className="font-[Gotham] font-[700] text-[12px] text-[#181818] whitespace-nowrap leading-[11.48px] uppercase">Recent Connections</span>
 
                     {/* Right Line (HR) */}
-                    <hr className="flex-grow border-gray-300" />
+                    <hr className="flex-grow border-[#E7E7E7]" />
                 </div>
-
 
                 {/* Image Section */}
                 <div className="space-y-6 w-[850px]">
-
-                    <div className="flex items-center justify-between w-full h-[95px] shadow-md px-4 space-x-6 bg-white">
+                    {/* Image Connection Card 1 */}
+                    <div className="w-full h-[95px] flex items-center justify-between shadow-md px-6 space-x-6 bg-white">
                         {/* Image and Text Section */}
                         <div className="flex items-center space-x-4">
-                            <Image height={100} width={100} alt='' className="w-12 h-12 rounded-full" />
+                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
                             <div className="flex flex-col">
-                                <p className="text-gray-700">Some here</p>
-                                <p className="">ojdiv</p>
-                                <span className="">dijfv</span>
+                                <p className="font-[Gotham] text-[#181818] font-bold text-[14px] leading-[13.4px]">Brandon Wilson</p>
+                                <p className="font-[Arial] mt-2 text-[#181818] text-[10px] font-[400] leading-15px">Senior graphic designer</p>
+                                <span className="font-[Gotham] mt-1 text-[#A45286] text-[10px] leading-[15px]">623 connections</span>
                             </div>
                         </div>
-                        <div className="h-12 border-l border-gray-300"></div>
+                        <div className="w-[2px] h-[42px] bg-[#A45286]"></div>
                         {/* Message Section */}
                         <div className="flex-1 w-[317px]">
-                            <p className="text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis totam,</p>
+                            <p className="w-[317px] h-[45px] flex justify-center items-center font-[Gotham] text-[10px] text-[#181818bb] leading-[15px]">
+                                Hey, I saw your works. I like it! Can we do something together? Or maybe you have project for UX at the moment?
+                            </p>
                         </div>
 
                         {/* Buttons Section */}
                         <div className="flex space-x-2">
-                            <button className="px-4 py-2 bg-[#A45286] text-white rounded-lg">Accept</button>
-                            <button className="px-4 py-2 bg-red-500 text-white rounded-lg">Decline</button>
+                            <button className="w-[91px] h-[32px] flex justify-center items-center rounded-[4px] uppercase bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0]">
+                                <span className='font-[Arial] font-[700] text-[#FFFFFF] text-[12px] leading-[13.8px]'>Accept</span>
+                            </button>
+                            <button className="w-[91px] h-[32px] flex justify-center items-center border-[#E7E7E7] border-[1px] rounded-[4px] uppercase">
+                                <span className='font-[Arial] font-medium text-[#B7B7B7] text-[12px] leading-[13.8px]'>Decline</span>
+                            </button>
                         </div>
                     </div>
-                    <div className="flex items-center justify-between w-full h-[95px] shadow-md px-4 space-x-6 bg-white">
+
+                    {/* Image Connection Card 2 */}
+                    <div className="w-full h-[95px] flex items-center justify-between shadow-md px-6 space-x-6 bg-white">
                         {/* Image and Text Section */}
                         <div className="flex items-center space-x-4">
-                            <Image height={100} width={100} alt='' className="w-12 h-12 rounded-full" />
+                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
                             <div className="flex flex-col">
-                                <p className="text-gray-700">Some here</p>
-                                <p className="">ojdiv</p>
-                                <span className="">dijfv</span>
+                                <p className="font-[Gotham] text-[#181818] font-bold text-[14px] leading-[13.4px]">Theresa Steward</p>
+                                <p className="font-[Arial] mt-2 text-[#181818] text-[10px] font-[400] leading-15px">Fashion Designer</p>
+                                <span className="font-[Gotham] mt-1 text-[#A45286] text-[10px] leading-[15px]">481 connections</span>
                             </div>
                         </div>
-                        <div className="h-12 border-l border-gray-300"></div>
+                        <div className="w-[2px] h-[42px] bg-[#A45286]"></div>
                         {/* Message Section */}
-                        <div className="flex-1">
-                            <p className="text-gray-600 w-[317px] ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis totam,</p>
+                        <div className="flex-1 w-[317px]">
+                            <p className="w-[317px] h-[45px] flex justify-center items-center font-[Gotham] text-[10px] text-[#181818bb] leading-[15px]">
+                                Hey, I saw your works. I like it! Can we do something together? Or maybe you have project for UX at the moment?
+                            </p>
                         </div>
 
                         {/* Buttons Section */}
                         <div className="flex space-x-2">
-                            <button className="px-4 py-2 bg-[#A45286] text-white rounded-lg">Accept</button>
-                            <button className="px-4 py-2 bg-red-500 text-white rounded-lg">Decline</button>
+                            <button className="w-[91px] h-[32px] flex justify-center items-center rounded-[4px] uppercase bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0]">
+                                <span className='font-[Arial] font-[700] text-[#FFFFFF] text-[12px] leading-[13.8px]'>Accept</span>
+                            </button>
+                            <button className="w-[91px] h-[32px] flex justify-center items-center border-[#E7E7E7] border-[1px] rounded-[4px] uppercase">
+                                <span className='font-[Arial] font-medium text-[#B7B7B7] text-[12px] leading-[13.8px]'>Decline</span>
+                            </button>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
