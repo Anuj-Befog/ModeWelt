@@ -14,7 +14,7 @@ const Connections = () => {
                 {/* Connection Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-[3rem]">
                     {/* Connection Card 1 */}
-                    <div className="bg-[#fff] shadow w-[251px] h-[136px] rounded-[4px]">
+                    <div className="bg-[#fff] w-[251px] h-[136px] rounded-[4px]">
                         {/* Top Card Container */}
                         <div className="p-2">
                             {/* Header Card */}
@@ -42,7 +42,7 @@ const Connections = () => {
                     </div>
 
                     {/* Connection Card 2 */}
-                    <div className="bg-[#fff] shadow w-[251px] h-[136px] rounded-[4px]">
+                    <div className="bg-[#fff] w-[251px] h-[136px] rounded-[4px]">
                         {/* Top Card Container */}
                         <div className="p-2">
                             {/* Header Card */}
@@ -70,7 +70,7 @@ const Connections = () => {
                     </div>
 
                     {/* Connection Card 3 */}
-                    <div className="bg-[#fff] shadow w-[251px] h-[136px] rounded-[4px]">
+                    <div className="bg-[#fff] w-[251px] h-[136px] rounded-[4px]">
                         {/* Top Card Container */}
                         <div className="p-2">
                             {/* Header Card */}
@@ -113,7 +113,7 @@ const Connections = () => {
                 {/* Image Section */}
                 <div className="space-y-6 w-[850px]">
                     {/* Image Connection Card 1 */}
-                    <div className="w-full h-[95px] flex items-center justify-between shadow-md px-6 space-x-6 bg-white">
+                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
                         {/* Image and Text Section */}
                         <div className="flex items-center space-x-4">
                             <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
@@ -143,7 +143,7 @@ const Connections = () => {
                     </div>
 
                     {/* Image Connection Card 2 */}
-                    <div className="w-full h-[95px] flex items-center justify-between shadow-md px-6 space-x-6 bg-white">
+                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
                         {/* Image and Text Section */}
                         <div className="flex items-center space-x-4">
                             <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
