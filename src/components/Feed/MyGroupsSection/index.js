@@ -15,7 +15,7 @@ export default function Index() {
                 {/* Divider */}
                 <hr className="border-t border-[#F4F4F4] w-[230px] mx-auto mt-2" />
                 {[1, 2, 3].map((_, index) => (
-                    <div key={index} className="flex w-[231px] h-[80px] mt-4 items-center justify-center p-3 gap-[0.5rem]">
+                    <div key={index} className="flex w-[231px] h-[80px] border border-[#F4F4F4] mt-4 items-center justify-center p-3 gap-[0.5rem]">
                         <Image
                             src="/assets/feed/profile.png"
                             alt="Group"

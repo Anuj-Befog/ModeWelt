@@ -65,7 +65,7 @@ export default function index() {
                 <div className="w-[850px] h-[1px] bg-[#F4F4F4] mt-1 mb-3"></div>
 
                 {/* Stats Post */}
-                <div className="flex justify-between items-center px-9 mb-4 mt-4">
+                <div className="flex justify-between items-center pb-[16px] px-9 mb-4 mt-4">
                     {/* Stats */}
                     <div className="relative flex gap-[4rem]"> {/* Increased spacing */}
                         {/* Likes */}
