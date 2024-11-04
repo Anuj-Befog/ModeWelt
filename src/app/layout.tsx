@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import dynamic from "next/dynamic"; // Import dynamic from Next.js
-import useLenis from './components/Hooks/index'; // Adjust path as needed
+import useLenis from '../components/Hooks/index'; // Adjust path as needed
 import { Suspense } from "react"; // Import Suspense for lazy loading
-import NProgressLoader from './components/NProgressLoader'; // Import the NProgressLoader
+import NProgressLoader from '../components/NProgressLoader'; // Import the NProgressLoader
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -24,8 +24,8 @@ const geistMono = localFont({
 });
 
 // Lazy load the Navbar and Footer components
-const Navbar = dynamic(() => import("./components/Navbar"));
-const Footer = dynamic(() => import("./components/Footer"));
+const Navbar = dynamic(() => import("../components/Navbar"));
+const Footer = dynamic(() => import("../components/Footer"));
 
 export const metadata: Metadata = {
   title: "Create Next App",

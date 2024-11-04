@@ -1,13 +1,12 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { FiUsers } from 'react-icons/fi';
-import Connections from '../components/Network/connection'
-import Invitations from '../components/Network/invitation'
-import Pages from '../components/Network/pages'
-import Groups from '../components/Network/groups'
-import Teammates from '../components/Network/teammates'
-import Hashtags from '../components/Network/hashtag'
+import Connections from '../../components/Network/connection'
+import Invitations from '../../components/Network/invitation'
+import Pages from '../../components/Network/pages'
+import Groups from '../../components/Network/groups'
+import Teammates from '../../components/Network/teammates'
+import Hashtags from '../../components/Network/hashtag'
 function Page() {
     // State to control which section is active
     const [activeSection, setActiveSection] = useState('connections');

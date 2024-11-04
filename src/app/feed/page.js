@@ -2,14 +2,12 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { GrAttachment } from 'react-icons/gr';
-import { CiImageOn, CiVideoOn } from 'react-icons/ci';
 import { BsFillSendFill } from 'react-icons/bs';
-import { FaEllipsisH, FaThumbsUp, FaComment, FaShareAlt } from 'react-icons/fa';
+import { FaEllipsisH, FaShareAlt } from 'react-icons/fa';
 import Image from 'next/image';
-import { LuDownloadCloud } from "react-icons/lu";
 
 const Post = () => {
+  // eslint-disable-next-line 
   const [src, setSrc] = useState('/profile.png'); // Default image path
   const [expanded, setExpanded] = useState(false);
 
@@ -60,7 +58,6 @@ const Post = () => {
           </p>
           <hr className="flex-grow border-gray-300" />
         </div>
-
 
         {/* Post Text Section */}
         <div className="bg-white w-[850px] h-auto my-4">
