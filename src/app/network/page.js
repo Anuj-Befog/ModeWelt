@@ -32,6 +32,7 @@ function Page() {
     const handleSent = () => {
         setActiveTab('sent');
     };
+
     return (
         <div className="mt-[45px] ml-[134px] flex">
             {/* Left Sidebar */}
@@ -40,17 +41,23 @@ function Page() {
                     className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
                     onClick={() => setActiveSection('connections')}
                 >
-                    <div className={`flex ${activeSection === 'connections' && 'opacity-[0.6]'}`} >
-                        <Image
-                            width={100}
-                            height={100}
-                            className='w-[16px] h-[16px]'
-                            src="/assets/network/connection.png"
-                            alt='connection'
-                        />
-                        <span className="font-[Arial] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">Connections</span>
+                    <div className={`w-full flex justify-between ${activeSection === 'connections' && 'opacity-[0.6]'} items-center`} >
+                        <div className='flex'>
+                            <Image
+                                width={100}
+                                height={100}
+                                className='w-[16px] h-[16px]'
+                                src="/assets/network/connection.png"
+                                alt='connection'
+                            />
+                            <span className="font-[Arial] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">Connections</span>
+                        </div>
+
+                        <div className='flex gap-2'>
+                            <Image className='w-[9px] h-[9px]' height={100} width={100} alt='active' src='/assets/network/active.png' />
+                            <span className='font-[Gotham] text-[12px] bg-clip-text text-transparent bg-gradient-to-r from-[#ED8F03] to-[#FBAE4A] font-[700] leading-[11.48px]'>1,038</span>
+                        </div>
                     </div>
-                    <span className="ml-auto text-[#FBAE4A]" > <span className=" text-xl ">.</span>1,038</span>
                 </div>
                 <ul className="space-y-0">
                     <li
@@ -65,7 +72,7 @@ function Page() {
                             alt='invitation'
                         />
                         <span className="font-[Arial] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">INVITATIONS</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] leading-[11.48px]">2</span>
+                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">2</span>
                     </li>
                     <li
                         className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'teammates' && 'opacity-[0.6]'}`}
@@ -79,7 +86,7 @@ function Page() {
                             alt='teammate'
                         />
                         <span className="font-[Gotham] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">TEAMMATES</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] leading-[11.48px]">6</span>
+                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">6</span>
                     </li>
                     <li
                         className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'groups' && 'opacity-[0.6]'}`}
@@ -93,7 +100,7 @@ function Page() {
                             alt='group'
                         />
                         <span className="font-[Gotham] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">GROUPS</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] leading-[11.48px]">6</span>
+                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">6</span>
                     </li>
                     <li
                         className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'pages' && 'opacity-[0.6]'}`}
@@ -107,7 +114,7 @@ function Page() {
                             alt='page'
                         />
                         <span className="font-[Gotham] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">PAGES</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] leading-[11.48px]">28</span>
+                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">28</span>
                     </li>
                     <li
                         className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'hashtags' && 'opacity-[0.6]'}`}
@@ -121,7 +128,7 @@ function Page() {
                             alt='hashtag'
                         />
                         <span className="font-[Arial] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">HASHTAGS</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] leading-[11.48px]">8</span>
+                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">8</span>
                     </li>
                 </ul>
             </div>
