@@ -1,166 +1,128 @@
 'use client'
-import React, { useState } from 'react';
+
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import Connections from '../../components/Network/connection'
-import Invitations from '../../components/Network/invitation'
-import Pages from '../../components/Network/pages'
-import Groups from '../../components/Network/groups'
-import Teammates from '../../components/Network/teammates'
-import Hashtags from '../../components/Network/hashtag'
-function Page() {
-    // State to control which section is active
+import Connections from '../../components/Network/connection';
+import Invitations from '../../components/Network/invitation';
+import Pages from '../../components/Network/pages';
+import Groups from '../../components/Network/groups';
+import Teammates from '../../components/Network/teammates';
+import Hashtags from '../../components/Network/hashtag';
+
+export default function Network() {
     const [activeSection, setActiveSection] = useState('connections');
-    // State to control the active tab
+    const scrollerRef = useRef(null);
 
+    // References for each link item
+    const connectionsRef = useRef(null);
+    const invitationsRef = useRef(null);
+    const teammatesRef = useRef(null);
+    const groupsRef = useRef(null);
+    const pagesRef = useRef(null);
+    const hashtagsRef = useRef(null);
 
-    const [activeGroup, setActiveGroup] = useState('your group');
-
-
-    const handleYourGroup = () => {
-        setActiveGroup('your group');
+    // Mapping active section to corresponding ref
+    const sectionRefs = {
+        connections: connectionsRef,
+        invitations: invitationsRef,
+        teammates: teammatesRef,
+        groups: groupsRef,
+        pages: pagesRef,
+        hashtags: hashtagsRef,
     };
 
-    const handleGroup = () => {
-        setActiveGroup('group');
-    };
-
-    // Handle switching between Received and Sent
-    const handleReceived = () => {
-        setActiveTab('received');
-    };
-
-    const handleSent = () => {
-        setActiveTab('sent');
-    };
+    // Move scroller to selected link
+    useEffect(() => {
+        const activeRef = sectionRefs[activeSection];
+        if (activeRef.current && scrollerRef.current) {
+            const topPosition = activeRef.current.offsetTop;
+            scrollerRef.current.style.top = `${topPosition + 0.6}px`;
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeSection]);
 
     return (
         <div className="mt-[45px] ml-[134px] flex">
             {/* Left Sidebar */}
-            <div className="w-[290px] h-[306px] bg-[#FFFFFF]">
-                <div
-                    className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
-                    onClick={() => setActiveSection('connections')}
-                >
-                    <div className={`w-full flex justify-between ${activeSection === 'connections' && 'opacity-[0.6]'} items-center`} >
-                        <div className='flex'>
-                            <Image
-                                width={100}
-                                height={100}
-                                className='w-[16px] h-[16px]'
-                                src="/assets/network/connection.png"
-                                alt='connection'
-                            />
-                            <span className="font-[Arial] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">Connections</span>
-                        </div>
+            <div className="w-[290px] h-[306px] bg-[#FFFFFF] relative">
+                <ul className="relative space-y-0">
+                    {/* Scroller */}
+                    <div
+                        ref={scrollerRef}
+                        className="absolute w-[5px] h-[48px] rounded-r-[50px] bg-[#A45286] shadow-lg transition-all duration-300 ease-in-out"
+                    ></div>
 
-                        <div className='flex gap-2'>
-                            <Image className='w-[9px] h-[9px]' height={100} width={100} alt='active' src='/assets/network/active.png' />
-                            <span className='font-[Gotham] text-[12px] bg-clip-text text-transparent bg-gradient-to-r from-[#ED8F03] to-[#FBAE4A] font-[700] leading-[11.48px]'>1,038</span>
-                        </div>
-                    </div>
-                </div>
-                <ul className="space-y-0">
+                    {/* Connections Link */}
                     <li
-                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'invitations' && 'opacity-[0.6]'}`}
+                        ref={connectionsRef}
+                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
+                        onClick={() => setActiveSection('connections')}
+                    >
+                        <Image width={16} height={16} src="/assets/network/connection.png" alt='connection' />
+                        <span className="ml-[0.4rem]">Connections</span>
+                    </li>
+
+                    {/* Invitations Link */}
+                    <li
+                        ref={invitationsRef}
+                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
                         onClick={() => setActiveSection('invitations')}
                     >
-                        <Image
-                            width={100}
-                            height={100}
-                            className='w-[16px] h-[16px]'
-                            src="/assets/network/invitation.png"
-                            alt='invitation'
-                        />
-                        <span className="font-[Arial] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">INVITATIONS</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">2</span>
+                        <Image width={16} height={16} src="/assets/network/invitation.png" alt='invitation' />
+                        <span className="ml-[0.4rem]">Invitations</span>
                     </li>
+
+                    {/* Teammates Link */}
                     <li
-                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'teammates' && 'opacity-[0.6]'}`}
+                        ref={teammatesRef}
+                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
                         onClick={() => setActiveSection('teammates')}
                     >
-                        <Image
-                            width={100}
-                            height={100}
-                            className='w-[16px] h-[16px]'
-                            src="/assets/network/teammate.png"
-                            alt='teammate'
-                        />
-                        <span className="font-[Gotham] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">TEAMMATES</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">6</span>
+                        <Image width={16} height={16} src="/assets/network/teammate.png" alt='teammate' />
+                        <span className="ml-[0.4rem]">Teammates</span>
                     </li>
+
+                    {/* Groups Link */}
                     <li
-                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'groups' && 'opacity-[0.6]'}`}
+                        ref={groupsRef}
+                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
                         onClick={() => setActiveSection('groups')}
                     >
-                        <Image
-                            width={100}
-                            height={100}
-                            className='w-[16px] h-[16px]'
-                            src="/assets/network/group.png"
-                            alt='group'
-                        />
-                        <span className="font-[Gotham] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">GROUPS</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">6</span>
+                        <Image width={16} height={16} src="/assets/network/group.png" alt='group' />
+                        <span className="ml-[0.4rem]">Groups</span>
                     </li>
+
+                    {/* Pages Link */}
                     <li
-                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'pages' && 'opacity-[0.6]'}`}
+                        ref={pagesRef}
+                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
                         onClick={() => setActiveSection('pages')}
                     >
-                        <Image
-                            width={100}
-                            height={100}
-                            className='w-[16px] h-[16px]'
-                            src="/assets/network/page.png"
-                            alt='page'
-                        />
-                        <span className="font-[Gotham] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">PAGES</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">28</span>
+                        <Image width={16} height={16} src="/assets/network/page.png" alt='page' />
+                        <span className="ml-[0.4rem]">Pages</span>
                     </li>
+
+                    {/* Hashtags Link */}
                     <li
-                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer ${activeSection === 'hashtags' && 'opacity-[0.6]'}`}
+                        ref={hashtagsRef}
+                        className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
                         onClick={() => setActiveSection('hashtags')}
                     >
-                        <Image
-                            width={100}
-                            height={100}
-                            className='w-[16px] h-[16px]'
-                            src="/assets/network/hashtag.png"
-                            alt='hashtag'
-                        />
-                        <span className="font-[Arial] text-[#181818] text-[12px] font-[700] leading-[13.8px] uppercase ml-[0.4rem]">HASHTAGS</span>
-                        <span className="ml-auto font-[Gotham] text-[#000000] text-[12px] font-[700] leading-[11.48px]">8</span>
+                        <Image width={16} height={16} src="/assets/network/hashtag.png" alt='hashtag' />
+                        <span className="ml-[0.4rem]">Hashtags</span>
                     </li>
                 </ul>
             </div>
 
             {/* Right Content */}
             <div className="ml-16 mb-10 space-y-8">
-                {activeSection === 'connections' && (
-                    <Connections />
-                )}
-
-                {activeSection === 'invitations' && (
-                    <Invitations />
-                )}
-
-                {activeSection === 'pages' && (
-                    <Pages />
-                )}
-
-                {activeSection === 'groups' && (
-                    <Groups />
-                )}
-
-                {activeSection === 'teammates' && (
-                    <Teammates />
-                )}
-
-                {activeSection === 'hashtags' && (
-                    <Hashtags />
-                )}
+                {activeSection === 'connections' && <Connections />}
+                {activeSection === 'invitations' && <Invitations />}
+                {activeSection === 'pages' && <Pages />}
+                {activeSection === 'groups' && <Groups />}
+                {activeSection === 'teammates' && <Teammates />}
+                {activeSection === 'hashtags' && <Hashtags />}
             </div>
         </div>
     );
 }
-
-export default Page;

@@ -25,11 +25,11 @@ const FaStore = dynamic(() => import("react-icons/fa").then(mod => mod.FaStore))
 const FaEllipsisH = dynamic(() => import("react-icons/fa").then(mod => mod.FaEllipsisH));
 
 const Navbar = () => {
+    // eslint-disable-next-line
     const [menuOpen, setMenuOpen] = useState(false);
     const [placeholder, setPlaceholder] = useState("Search");
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const [isPostShare, setIsPostShare] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [activeLink, setActiveLink] = useState('/feed'); // Track the active link
     const [scrollerStyle, setScrollerStyle] = useState({});
@@ -73,17 +73,12 @@ const Navbar = () => {
         }
     }, [activeLink]);
 
-
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
 
     const toggleSearch = () => {
         setIsSearchOpen(!isSearchOpen);
-    };
-
-    const togglePostShare = () => {
-        setIsPostShare(!isPostShare);
     };
 
     const closeModal = () => {
