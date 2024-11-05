@@ -58,8 +58,8 @@ export default function Network() {
                         className={`flex items-center p-[1rem] border-b-2 border-slate-300 w-full h-[51px] cursor-pointer`}
                         onClick={() => setActiveSection('connections')}
                     >
-                        <div className={`w-full flex justify-between ${activeSection === 'connections' && 'opacity-[0.6]'} items-center`} >
-                            <div className={`flex transition transition-300 ${activeSection === 'connections' && 'relative left-[0.7rem]'}`}>
+                        <div className={`w-full flex justify-between items-center`} >
+                            <div className={`flex transition transition-300 ${activeSection === 'connections' && 'relative left-[0.7rem] opacity-[0.6]'}`}>
                                 <Image
                                     width={100}
                                     height={100}

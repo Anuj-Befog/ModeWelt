@@ -63,7 +63,7 @@ export default function Invitation() {
                                 </div>
 
                                 {/* Image Section */}
-                                <div className="space-y-4 mt-7 w-[850px]">
+                                <div className="space-y-2 mt-7 w-[850px]">
                                     {/* Image Connection Card 1 */}
                                     <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                                         {/* Image and Text Section */}
@@ -224,7 +224,7 @@ export default function Invitation() {
                                 <div className="Connections">
                                     <div className="mb-24 space-y-8">
                                         {/* Image Section */}
-                                        <div className="space-y-4 mt-7 w-[850px]">
+                                        <div className="space-y-2 mt-7 w-[850px]">
                                             {/* Image Connection Card 1 */}
                                             <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                                                 {/* Image and Text Section */}

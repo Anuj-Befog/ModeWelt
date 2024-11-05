@@ -69,7 +69,7 @@ export default function Invitation() {
                                 </div>
 
                                 {/* Image Section */}
-                                <div className="space-y-4 mt-7 w-[850px] min-h-[60vh]">
+                                <div className="space-y-2 mt-7 w-[850px] min-h-[60vh]">
                                     {/* Image Connection Card 1 */}
                                     <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px] border-[#E4E4E4] border-[1px]">
                                         {/* Image and Text Section */}
@@ -149,68 +149,185 @@ export default function Invitation() {
                             </div>
                         ) : (
                             <div>
-                                <div className="Connections">
-                                    <div className="mb-24 space-y-8">
-                                        {/* Image Section */}
-                                        <div className="space-y-6 mt-7 w-[850px]">
-                                            {/* Image Connection Card 1 */}
-                                            <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
-                                                {/* Image and Text Section */}
-                                                <div className="flex items-center space-x-4">
-                                                    <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
-                                                    <div className="flex flex-col">
-                                                        <p className="font-[Gotham] text-[#181818] font-bold text-[14px] leading-[13.4px]">Brandon Wilson</p>
-                                                        <p className="font-[Arial] mt-2 text-[#181818] text-[10px] font-[400] leading-[15px]">Senior graphic designer</p>
-                                                        <span className="font-[Gotham] mt-1 text-[#A45286] text-[10px] leading-[15px]">623 connections</span>
-                                                    </div>
-                                                </div>
-                                                <div className="w-[2px] h-[42px] bg-[#A45286]"></div>
-                                                {/* Message Section */}
-                                                <div className="flex-1 w-[317px]">
-                                                    <p className="w-[317px] h-[45px] flex justify-center items-center font-[Gotham] text-[10px] text-[#181818bb] leading-[15px]">
-                                                        Hey, I saw your works. I like it! Can we do something together? Or maybe you have project for UX at the moment?
-                                                    </p>
-                                                </div>
-
-                                                {/* Buttons Section */}
-                                                <div className="flex space-x-2">
-                                                    <button className="w-[91px] h-[32px] flex justify-center items-center rounded-[4px] uppercase bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0]">
-                                                        <span className='font-[Arial] font-[700] text-[#FFFFFF] text-[12px] leading-[13.8px]'>Accept</span>
-                                                    </button>
-                                                    <button className="w-[91px] h-[32px] flex justify-center items-center border-[#E7E7E7] border-[1px] rounded-[4px] uppercase">
-                                                        <span className='font-[Arial] font-medium text-[#B7B7B7] text-[12px] leading-[13.8px]'>Decline</span>
-                                                    </button>
-                                                </div>
+                                {/* Your Group Section */}
+                                <div className="space-y-2 mt-7 w-[851px] h-[558px] overflow-y-scroll bg-[#fff] rounded-[4px] your-group-scrollbar">
+                                    {/* Group Card 1 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
                                             </div>
+                                        </div>
 
-                                            {/* Image Connection Card 2 */}
-                                            <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
-                                                {/* Image and Text Section */}
-                                                <div className="flex items-center space-x-4">
-                                                    <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
-                                                    <div className="flex flex-col">
-                                                        <p className="font-[Gotham] text-[#181818] font-bold text-[14px] leading-[13.4px]">Theresa Steward</p>
-                                                        <p className="font-[Arial] mt-2 text-[#181818] text-[10px] font-[400] leading-[15px]">Fashion Designer</p>
-                                                        <span className="font-[Gotham] mt-1 text-[#A45286] text-[10px] leading-[15px]">481 connections</span>
-                                                    </div>
-                                                </div>
-                                                <div className="w-[3px] h-[42px] bg-[#A45286]"></div>
-                                                {/* Message Section */}
-                                                <div className="flex-1 w-[317px]">
-                                                    <p className="w-[317px] h-[45px] flex justify-center items-center font-[Gotham] text-[10px] text-[#181818bb] leading-[15px]">
-                                                        Hey, I saw your works. I like it! Can we do something together? Or maybe you have project for UX at the moment?
-                                                    </p>
-                                                </div>
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 2 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
 
-                                                {/* Buttons Section */}
-                                                <div className="flex space-x-2">
-                                                    <button className="w-[91px] h-[32px] flex justify-center items-center rounded-[4px] uppercase bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0]">
-                                                        <span className='font-[Arial] font-[700] text-[#FFFFFF] text-[12px] leading-[13.8px]'>Accept</span>
-                                                    </button>
-                                                    <button className="w-[91px] h-[32px] flex justify-center items-center border-[#E7E7E7] border-[1px] rounded-[4px] uppercase">
-                                                        <span className='font-[Arial] font-medium text-[#B7B7B7] text-[12px] leading-[13.8px]'>Decline</span>
-                                                    </button>
-                                                </div>
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 3 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 4 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 5 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 6 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 7 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 8 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 9 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Group Card 10 */}
+                                    <div className="w-full h-[95px] flex items-center justify-between px-4 space-x-6 bg-white rounded-[4px]">
+                                        {/* Image and Text Section */}
+                                        <div className="flex items-center space-x-2">
+                                            <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
+                                            <div className="flex flex-col">
+                                                <p className="font-[Arial] font-[700] text-[#181818] text-[14px] leading-[16.1px] uppercase">Group Name</p>
+                                                <p className="font-[Arial] mt-[4px] text-[#181818] text-[14px] opacity-[60%] font-[400] leading-[15px]">15,522 members</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Three Dots Button */}
+                                        <div className="flex space-x-2">
+                                            <div className="w-[32px] h-[32px] flex justify-center items-center rounded-[4px] mr-[1rem] cursor-pointer">
+                                                <Image src='/assets/groups/your-group/threedots.png' height={500} width={500} alt='three dots icon' />
                                             </div>
                                         </div>
                                     </div>

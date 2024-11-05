@@ -111,7 +111,7 @@ export default function Connection() {
                 </div>
 
                 {/* Image Section */}
-                <div className="space-y-4 w-[850px]">
+                <div className="space-y-2 w-[850px]">
                     {/* Image Connection Card 1 */}
                     <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                         {/* Image and Text Section */}
