@@ -3,16 +3,16 @@ import Image from 'next/image';
 
 export default function Invitation() {
 
-    const [activeTab, setActiveTab] = useState('received');
-
-    // Handle switching between Received and Sent
-    const handleReceived = () => {
-        setActiveTab('received');
-    };
+    const [activeTab, setActiveTab] = useState('sent');
 
     // Handle switching between Received and Sent
     const handleSent = () => {
         setActiveTab('sent');
+    };
+
+    // Handle switching between Received and Sent
+    const handleReceived = () => {
+        setActiveTab('received');
     };
 
     return (
@@ -29,7 +29,7 @@ export default function Invitation() {
                     <div className="flex items-end border-b-[1px] border-[#E7E7E7]">
                         {/* Received Button */}
                         <div
-                            className={`w-[240px] flex justify-center items-center font-[Arial] font-[400] text-[12px] ${activeTab === 'sent' ? 'bg-[#fff] text-[#000] h-[40px] cursor-pointer' : 'h-[50px] bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0] text-white'} font-semibold transition-all duration-300 leading-[13.8px] uppercase`}
+                            className={`w-[240px] flex justify-center items-center font-[Arial] font-[400] text-[12px] ${activeTab === 'sent' ? 'bg-[#fff] text-[#000] h-[40px] cursor-pointer' : 'h-[50px] bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0] text-white rounded-t-[4px]'} font-semibold transition-all duration-300 leading-[13.8px] uppercase`}
                             onClick={handleReceived}
                         >
                             Received
@@ -37,7 +37,7 @@ export default function Invitation() {
 
                         {/* Sent Button */}
                         <div
-                            className={`w-[240px] flex justify-center items-center font-[Arial] font-[400] text-[12px] ${activeTab === 'received' ? 'bg-[#fff] text-[#000] h-[40px] cursor-pointer' : 'h-[50px] bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0] text-white'} font-semibold transition-all duration-300 leading-[13.8px] uppercase`}
+                            className={`w-[240px] flex justify-center items-center font-[Arial] font-[400] text-[12px] ${activeTab === 'received' ? 'bg-[#fff] text-[#000] h-[40px] cursor-pointer' : 'h-[50px] bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0] text-white rounded-t-[4px]'} font-semibold transition-all duration-300 leading-[13.8px] uppercase`}
                             onClick={handleSent}
                         >
                             Sent
@@ -54,7 +54,7 @@ export default function Invitation() {
                                     <hr className="flex-grow border-[#E7E7E7]" />
 
                                     {/* Text */}
-                                    <div className="font-[Gotham] font-[700] text-[12px] text-[#181818] whitespace-nowrap leading-[11.48px] uppercase">
+                                    <div className="font-[Gotham] font-[400] text-[12px] text-[#181818] whitespace-nowrap leading-[11.48px] uppercase">
                                         YOU HAVE <span className='text-[#A45286]'>2 NEW CONNECTION</span>
                                     </div>
 
@@ -63,9 +63,9 @@ export default function Invitation() {
                                 </div>
 
                                 {/* Image Section */}
-                                <div className="space-y-6 mt-7 w-[850px]">
+                                <div className="space-y-4 mt-7 w-[850px]">
                                     {/* Image Connection Card 1 */}
-                                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
+                                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                                         {/* Image and Text Section */}
                                         <div className="flex items-center space-x-4">
                                             <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
@@ -95,7 +95,7 @@ export default function Invitation() {
                                     </div>
 
                                     {/* Image Connection Card 2 */}
-                                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
+                                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                                         {/* Image and Text Section */}
                                         <div className="flex items-center space-x-4">
                                             <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
@@ -144,7 +144,7 @@ export default function Invitation() {
                                     {/* First Row */}
                                     <div className="flex space-x-2">
                                         {/* First Item */}
-                                        <div className="w-[420px] h-[95px] flex items-center px-[1.4rem] bg-[#fff]">
+                                        <div className="w-[420px] h-[95px] flex items-center px-[1.4rem] bg-[#fff] rounded-[4px]">
                                             <div className='w-[375px] h-[65px] flex'>
                                                 {/* Image and Text Section */}
                                                 <div className="flex items-center space-x-4">
@@ -161,7 +161,7 @@ export default function Invitation() {
                                             </div>
                                         </div>
                                         {/* Second Item */}
-                                        <div className="w-[420px] h-[95px] flex items-center px-[1.4rem] bg-[#fff]">
+                                        <div className="w-[420px] h-[95px] flex items-center px-[1.4rem] bg-[#fff] rounded-[4px]">
                                             <div className='w-[375px] h-[65px] flex'>
                                                 {/* Image and Text Section */}
                                                 <div className="flex items-center space-x-4">
@@ -183,7 +183,7 @@ export default function Invitation() {
                                     {/* First Row */}
                                     <div className="flex space-x-2 mt-2">
                                         {/* First Item */}
-                                        <div className="w-[420px] h-[95px] flex items-center px-[1.4rem] bg-[#fff]">
+                                        <div className="w-[420px] h-[95px] flex items-center px-[1.4rem] bg-[#fff] rounded-[4px]">
                                             <div className='w-[375px] h-[65px] flex'>
                                                 {/* Image and Text Section */}
                                                 <div className="flex items-center space-x-4">
@@ -200,7 +200,7 @@ export default function Invitation() {
                                             </div>
                                         </div>
                                         {/* Second Item */}
-                                        <div className="w-[420px] h-[95px] flex items-center px-[1.4rem] bg-[#fff]">
+                                        <div className="w-[420px] h-[95px] flex items-center px-[1.4rem] bg-[#fff] rounded-[4px]">
                                             <div className='w-[375px] h-[65px] flex'>
                                                 {/* Image and Text Section */}
                                                 <div className="flex items-center space-x-4">
@@ -224,9 +224,9 @@ export default function Invitation() {
                                 <div className="Connections">
                                     <div className="mb-24 space-y-8">
                                         {/* Image Section */}
-                                        <div className="space-y-6 mt-7 w-[850px]">
+                                        <div className="space-y-4 mt-7 w-[850px]">
                                             {/* Image Connection Card 1 */}
-                                            <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
+                                            <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                                                 {/* Image and Text Section */}
                                                 <div className="flex items-center space-x-4">
                                                     <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
@@ -256,7 +256,7 @@ export default function Invitation() {
                                             </div>
 
                                             {/* Image Connection Card 2 */}
-                                            <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
+                                            <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                                                 {/* Image and Text Section */}
                                                 <div className="flex items-center space-x-4">
                                                     <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />

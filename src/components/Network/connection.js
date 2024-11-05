@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Connections = () => {
+export default function Connection() {
     return (
         <div className="Connections">
             <div className="mb-24 space-y-8">
@@ -111,9 +111,9 @@ const Connections = () => {
                 </div>
 
                 {/* Image Section */}
-                <div className="space-y-6 w-[850px]">
+                <div className="space-y-4 w-[850px]">
                     {/* Image Connection Card 1 */}
-                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
+                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                         {/* Image and Text Section */}
                         <div className="flex items-center space-x-4">
                             <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
@@ -143,7 +143,7 @@ const Connections = () => {
                     </div>
 
                     {/* Image Connection Card 2 */}
-                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white">
+                    <div className="w-full h-[95px] flex items-center justify-between px-6 space-x-6 bg-white rounded-[4px]">
                         {/* Image and Text Section */}
                         <div className="flex items-center space-x-4">
                             <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
@@ -177,4 +177,3 @@ const Connections = () => {
     );
 };
 
-export default Connections;
