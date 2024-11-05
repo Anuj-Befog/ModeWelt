@@ -119,7 +119,7 @@ const Connections = () => {
                             <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
                             <div className="flex flex-col">
                                 <p className="font-[Gotham] text-[#181818] font-bold text-[14px] leading-[13.4px]">Brandon Wilson</p>
-                                <p className="font-[Arial] mt-2 text-[#181818] text-[10px] font-[400] leading-15px">Senior graphic designer</p>
+                                <p className="font-[Arial] mt-2 text-[#181818] text-[10px] font-[400] leading-[15px]">Senior graphic designer</p>
                                 <span className="font-[Gotham] mt-1 text-[#A45286] text-[10px] leading-[15px]">623 connections</span>
                             </div>
                         </div>
@@ -149,11 +149,11 @@ const Connections = () => {
                             <Image src='/assets/sample/connection-profile.png' height={100} width={100} alt='connection image' className="w-[52px] h-[52px] rounded-full" />
                             <div className="flex flex-col">
                                 <p className="font-[Gotham] text-[#181818] font-bold text-[14px] leading-[13.4px]">Theresa Steward</p>
-                                <p className="font-[Arial] mt-2 text-[#181818] text-[10px] font-[400] leading-15px">Fashion Designer</p>
+                                <p className="font-[Arial] mt-2 text-[#181818] text-[10px] font-[400] leading-[15px]">Fashion Designer</p>
                                 <span className="font-[Gotham] mt-1 text-[#A45286] text-[10px] leading-[15px]">481 connections</span>
                             </div>
                         </div>
-                        <div className="w-[2px] h-[42px] bg-[#A45286]"></div>
+                        <div className="w-[3px] h-[42px] bg-[#A45286]"></div>
                         {/* Message Section */}
                         <div className="flex-1 w-[317px]">
                             <p className="w-[317px] h-[45px] flex justify-center items-center font-[Gotham] text-[10px] text-[#181818bb] leading-[15px]">
